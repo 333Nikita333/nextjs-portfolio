@@ -37,7 +37,7 @@ const Home = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-16"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus labore architecto
             quos animi velit molestiae voluptas quod dicta numquam vel! Vitae, maxime cupiditate
