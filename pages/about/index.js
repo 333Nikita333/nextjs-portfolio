@@ -95,7 +95,6 @@ export const aboutData = [
 
 const About = () => {
   const [index, setIndex] = useState(0);
-  console.log('index', index);
 
   return (
     <div className="h-full bg-primary/30 py-45 text-center xl:text-left mt-5">
@@ -121,9 +120,11 @@ const About = () => {
               <div
                 key={itemIndex}
                 className={`${
+                  index === itemIndex && 'text-accent'
+                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:absolute after:-bottom-1 after:left-0 ${
                   index === itemIndex &&
-                  'after:bg-accent text-accent after:w-[100%] after:transition-all after:duration-300'
-                } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:-bottom-1 after:left-0`}
+                  'after:bg-accent after:w-[100%] after:transition-all after:duration-300'
+                }`}
                 onClick={() => setIndex(itemIndex)}
               >
                 {item.title}

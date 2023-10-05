@@ -6,7 +6,8 @@
   transform: translateZ(0px);
 }
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
   background-color: #f13024;
 }
 
@@ -46,5 +47,8 @@
   }
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
+  }
+  .active {
+    @apply bg-accent;
   }
 }
