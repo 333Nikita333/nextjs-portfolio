@@ -120,10 +120,11 @@ const About = () => {
               <div
                 key={itemIndex}
                 className={`${
-                  index === itemIndex && 'text-accent'
+                  index === itemIndex ? 'text-accent' : ''
                 } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:absolute after:-bottom-1 after:left-0 ${
-                  index === itemIndex &&
-                  'after:bg-accent after:w-[100%] after:transition-all after:duration-300'
+                  index === itemIndex
+                    ? 'after:bg-accent after:w-[100%] after:transition-all after:duration-300'
+                    : 'after:bg-white'
                 }`}
                 onClick={() => setIndex(itemIndex)}
               >
