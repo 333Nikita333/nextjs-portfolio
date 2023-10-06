@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 import {
   FaHtml5,
   FaCss3,
@@ -97,7 +98,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 py-45 text-center xl:text-left mt-5">
+    <div className="h-full max-sm:overflow-y-auto bg-primary/30 py-45 text-center xl:text-left mt-5">
       <Circles />
       {/* avatar img */}
       <motion.div
@@ -105,16 +106,86 @@ const About = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
+        className="hidden max-w-[342px] max-h-[451px] xl:flex absolute bottom-0 -left-[171px]"
       >
-        <Avatar />
+        <div style={{ transform: 'scaleX(-1)' }}>
+          <Avatar />
+        </div>
       </motion.div>
+
       <div
         className="container mx-auto h-full flex flex-col items-center xl:flex-row 
-      gap-x-6"
+      gap-x-6 mt-24"
       >
-        <div className="flex-1 flex flex-col justify-center">text</div>
+        {/* text */}
+        <div className="flex-1 flex flex-col justify-center xl:ml-12">
+          <h2 className="h2">
+            Captivating <span className="text-accent">stories</span> birth
+            magnificent design.
+          </h2>
+          <p className="max-w-[500px] mx-auto xl:mx-0 mb-2 xl:mb-3 px-2 xl:px-0">
+            {/* 10 years ago, I began freelancing as a developer. Since then,
+            I&apos;ve done remote work for agencies, counsulted fro startups,
+            and collaborated on digital products for business and consumer use. */}
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. In
+            dolores, quae ipsa, necessitatibus, nam ea quam delectus ut
+            laboriosam facere praesentium et hic reiciendis voluptates atque
+            sunt. Corporis, at veritatis.
+          </p>
+          {/* counters */}
+          <div>
+            <div>
+              {/* experience */}
+              <div
+                className="relative mb-1 flex-1 after:w-[1px] after:h-full 
+              after:bg-white/10 after:absolute after:top-0 after:right-0"
+              >
+                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
+                  <CountUp start={0} end={1} duration={5} /> +
+                </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  Years of expirience
+                </div>
+              </div>
+              {/* clients */}
+              <div
+                className="relative mb-1 flex-1 after:w-[1px] after:h-full 
+              after:bg-white/10 after:absolute after:top-0 after:right-0"
+              >
+                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
+                  <CountUp start={0} end={0} duration={5} /> +
+                </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  Satisfied clients
+                </div>
+              </div>
+              {/* projects */}
+              <div
+                className="relative mb-1 flex-1 after:w-[1px] after:h-full 
+              after:bg-white/10 after:absolute after:top-0 after:right-0"
+              >
+                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
+                  <CountUp start={0} end={10} duration={5} /> +
+                </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  Finished projects
+                </div>
+              </div>
+              {/* awards */}
+              <div className="relative mb-1 flex-1">
+                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
+                  <CountUp start={0} end={0} duration={5} /> +
+                </div>
+                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
+                  Winning awards
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* info */}
         <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
+          {/* skills, awards, expirience, credentials */}
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto mb-4">
             {aboutData.map((item, itemIndex) => (
               <div
@@ -132,20 +203,21 @@ const About = () => {
               </div>
             ))}
           </div>
+          {/* subparagraphs of skills, awards, expirience and credentials */}
           <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-center xl:items-start">
             {aboutData[index].info.map((item, itemIndex) => (
               <div
                 key={itemIndex}
-                className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60"
+                className="flex-1 flex flex-col sm:flex-row max-w-max gap-x-2 items-center text-white/60"
               >
-                {/* title */}
+                {/* title of subparagraphs */}
                 <div>{item.title}</div>
-                <div className="hidden md:flex md:justify-center xl:justify-start">
+                <div className="hidden sm:flex sm:justify-center xl:justify-start">
                   -
                 </div>
                 <div>{item.stage}</div>
                 <div className="flex gap-x-4">
-                  {/* icons */}
+                  {/* icons of skills*/}
                   {item.icons?.map((icon, itemIndex) => (
                     <div className="text-2xl text-white" key={itemIndex}>
                       {icon}

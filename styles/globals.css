@@ -29,7 +29,7 @@
     @apply text-[30px] leading-tight md:text-[40px] md:leading-[1.1] mb-4 font-semibold;
   }
   .h2 {
-    @apply text-[25px] leading-tight md:text-[35px] mb md:leading-[1.1] mb-4 font-semibold;
+    @apply text-[25px] leading-tight md:text-[35px] md:leading-[1.1] mb-4 font-semibold;
   }
   p {
     @apply leading-[1.8] text-white/60 font-light md:text-[15px] mb-4;
@@ -47,8 +47,5 @@
   }
   .textarea {
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
-  }
-  .active {
-    @apply bg-accent;
   }
 }
