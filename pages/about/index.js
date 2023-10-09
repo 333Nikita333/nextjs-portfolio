@@ -159,11 +159,23 @@ const About = () => {
       >
         {/* text */}
         <div className="flex-1 flex flex-col xl:ml-12 max-xl:mb-3 mt-28 md:mt-24 lg:mt-20 xl:mt-0">
-          <h2 className="h2">
+          <motion.h2
+            variants={fadeIn('right', 0.2)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="h2"
+          >
             Captivating <span className="text-accent">stories</span> birth
             magnificent design.
-          </h2>
-          <p className="max-w-[500px] mx-auto xl:mx-0 mb-2 xl:mb-3 px-2 xl:px-0">
+          </motion.h2>
+          <motion.p
+            variants={fadeIn('right', 0.4)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="max-w-[500px] mx-auto xl:mx-0 mb-2 xl:mb-3 px-2 xl:px-0"
+          >
             {/* 10 years ago, I began freelancing as a developer. Since then,
             I&apos;ve done remote work for agencies, counsulted fro startups,
             and collaborated on digital products for business and consumer use. */}
@@ -171,9 +183,15 @@ const About = () => {
             dolores, quae ipsa, necessitatibus, nam ea quam delectus ut
             laboriosam facere praesentium et hic reiciendis voluptates atque
             sunt. Corporis, at veritatis.
-          </p>
+          </motion.p>
           {/* counters */}
-          <div>
+          <motion.div
+            variants={fadeIn('right', 0.6)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
+          >
             <div className="flex flex-1 xl:gap-x-6">
               {counters.map(({ end, text }, index) => (
                 <div
@@ -192,10 +210,16 @@ const About = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
         {/* info */}
-        <div className="flex flex-col w-full xl:max-w-[48%] h-[480px] max-sm:mb-20">
+        <motion.div
+          variants={fadeIn('left', 0.4)}
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          className="flex flex-col w-full xl:max-w-[48%] h-[480px] max-sm:mb-20"
+        >
           {/* skills, awards, expirience, credentials */}
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto mb-4">
             {aboutData.map((item, itemIndex) => (
@@ -238,7 +262,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
