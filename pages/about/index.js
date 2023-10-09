@@ -31,6 +31,16 @@ export const aboutData = [
           <FaJs key="js" />,
           <FaReact key="react" />,
           <SiNextdotjs key="nextjs" />,
+          <FaHtml5 key="html5" />,
+          <FaCss3 key="css3" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiNextdotjs key="nextjs" />,
+          <FaHtml5 key="html5" />,
+          <FaCss3 key="css3" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiNextdotjs key="nextjs" />,
           // <SiFramer key="framer" />,
           // <FaWordpress key="wordpress" />,
         ],
@@ -38,9 +48,21 @@ export const aboutData = [
       {
         title: 'Back-end',
         icons: [
-          // <FaFigma key="figma" />,
-          // <SiAdobexd key="adobexd" />,
-          // <SiAdobephotoshop key="photoshop" />,
+          <FaHtml5 key="html5" />,
+          <FaCss3 key="css3" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiNextdotjs key="nextjs" />,
+          <FaHtml5 key="html5" />,
+          <FaCss3 key="css3" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiNextdotjs key="nextjs" />,
+          <FaHtml5 key="html5" />,
+          <FaCss3 key="css3" />,
+          <FaJs key="js" />,
+          <FaReact key="react" />,
+          <SiNextdotjs key="nextjs" />,
         ],
       },
     ],
@@ -93,12 +115,30 @@ export const aboutData = [
     ],
   },
 ];
+export const counters = [
+  {
+    end: 1,
+    text: 'Years of expirience',
+  },
+  {
+    end: 0,
+    text: 'Satisfied clients',
+  },
+  {
+    end: 10,
+    text: 'Finished projects',
+  },
+  {
+    end: 0,
+    text: 'Winning awards',
+  },
+];
 
 const About = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full max-sm:overflow-y-auto bg-primary/30 py-45 text-center xl:text-left mt-5">
+    <div className="h-full text-center xl:text-left">
       <Circles />
       {/* avatar img */}
       <motion.div
@@ -115,10 +155,10 @@ const About = () => {
 
       <div
         className="container mx-auto h-full flex flex-col items-center xl:flex-row 
-      gap-x-6 mt-24"
+      gap-x-6 xl:mt-4 max-sm:overflow-y-auto"
       >
         {/* text */}
-        <div className="flex-1 flex flex-col justify-center xl:ml-12">
+        <div className="flex-1 flex flex-col xl:ml-12 max-xl:mb-3 mt-28 md:mt-24 lg:mt-20 xl:mt-0">
           <h2 className="h2">
             Captivating <span className="text-accent">stories</span> birth
             magnificent design.
@@ -134,57 +174,28 @@ const About = () => {
           </p>
           {/* counters */}
           <div>
-            <div>
-              {/* experience */}
-              <div
-                className="relative mb-1 flex-1 after:w-[1px] after:h-full 
-              after:bg-white/10 after:absolute after:top-0 after:right-0"
-              >
-                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
-                  <CountUp start={0} end={1} duration={5} /> +
+            <div className="flex flex-1 xl:gap-x-6">
+              {counters.map(({ end, text }, index) => (
+                <div
+                  key={index}
+                  className={`relative mb-1 flex-1 ${
+                    index !== counters.length - 1 &&
+                    'after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'
+                  }`}
+                >
+                  <div className="text-2xl xl:text-4xl font-extrabold text-accent">
+                    <CountUp start={0} end={end} duration={5} /> +
+                  </div>
+                  <div className="text-xs uppercase tracking-[1px] leading-[1.4] xl:max-w-[100px]">
+                    {text}
+                  </div>
                 </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of expirience
-                </div>
-              </div>
-              {/* clients */}
-              <div
-                className="relative mb-1 flex-1 after:w-[1px] after:h-full 
-              after:bg-white/10 after:absolute after:top-0 after:right-0"
-              >
-                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
-                  <CountUp start={0} end={0} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients
-                </div>
-              </div>
-              {/* projects */}
-              <div
-                className="relative mb-1 flex-1 after:w-[1px] after:h-full 
-              after:bg-white/10 after:absolute after:top-0 after:right-0"
-              >
-                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
-                  <CountUp start={0} end={10} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Finished projects
-                </div>
-              </div>
-              {/* awards */}
-              <div className="relative mb-1 flex-1">
-                <div className="text-2xl xl:text-3xl font-extrabold text-accent">
-                  <CountUp start={0} end={0} duration={5} /> +
-                </div>
-                <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
         {/* info */}
-        <div className="flex flex-col w-full xl:max-w-[48%] h-[480px]">
+        <div className="flex flex-col w-full xl:max-w-[48%] h-[480px] max-sm:mb-20">
           {/* skills, awards, expirience, credentials */}
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto mb-4">
             {aboutData.map((item, itemIndex) => (
@@ -216,7 +227,7 @@ const About = () => {
                   -
                 </div>
                 <div>{item.stage}</div>
-                <div className="flex gap-x-4">
+                <div className="flex gap-4 flex-wrap max-sm:justify-center xl:mr-14">
                   {/* icons of skills*/}
                   {item.icons?.map((icon, itemIndex) => (
                     <div className="text-2xl text-white" key={itemIndex}>
