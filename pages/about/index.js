@@ -146,7 +146,7 @@ const About = () => {
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="hidden max-w-[342px] max-h-[451px] xl:flex absolute bottom-0 -left-[171px]"
+        className="hidden max-w-[415px] max-h-[415px] xl:flex absolute bottom-0 -left-[171px]"
       >
         <div style={{ transform: 'scaleX(-1)' }}>
           <Avatar />
