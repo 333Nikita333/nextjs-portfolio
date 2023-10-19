@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import {
-  RiYoutubeLine,
-  RiInstagramLine,
-  RiFacebookBoxLine,
-  RiDribbbleLine,
   RiBehanceLine,
+  RiDribbbleLine,
+  RiFacebookBoxLine,
+  RiInstagramLine,
   RiPinterestLine,
+  RiYoutubeLine,
 } from 'react-icons/ri';
 
 const socials = [

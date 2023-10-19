@@ -1,9 +1,7 @@
 // framer motion
 import { motion } from 'framer-motion';
+import { Bulb, Circles, ServiceSlider } from '../../components';
 import { fadeIn } from '../../variants';
-import ServiceSlider from '../../components/ServiceSlider';
-import Bulb from '../../components/Bulb';
-import Circles from '../../components/Circles';
 
 const Services = () => {
   return (

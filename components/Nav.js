@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-// icons
 import {
-  HiHome,
-  HiUser,
-  HiViewColumns,
-  HiRectangleGroup,
   HiChatBubbleBottomCenterText,
   HiEnvelope,
+  HiHome,
+  HiRectangleGroup,
+  HiUser,
+  HiViewColumns,
 } from 'react-icons/hi2';
 
 // nav data
@@ -57,8 +56,10 @@ const Nav = () => {
                   {link.name}
                 </div>
                 {/* triangle */}
-                <div className="border-solid border-l-white border-l-8 
-                border-y-transparent border-y-[6px] border-r-0 absolute -right-2"></div>
+                <div
+                  className="border-solid border-l-white border-l-8 
+                border-y-transparent border-y-[6px] border-r-0 absolute -right-2"
+                ></div>
               </div>
             </div>
 

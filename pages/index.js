@@ -1,11 +1,10 @@
-import Image from 'next/image';
-
-import ParticlesContainer from '../components/ParticlesContainer';
-import ProjectsBtn from '../components/ProjectsBtn';
-import Avatar from '../components/Avatar';
-
 import { motion } from 'framer-motion';
-
+import {
+  Avatar,
+  ParticlesContainer,
+  ProjectsBtn,
+  HomeTitle,
+} from '../components';
 import { fadeIn } from '../variants';
 
 const Home = () => {
@@ -21,28 +20,21 @@ const Home = () => {
         h-full container mx-auto"
         >
           {/* title */}
-          <motion.h1
-            variants={fadeIn('down', 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="h1"
-          >
-            Transforming Ideas <br /> Into
-            <span className="text-accent">Digital Reality</span>
-          </motion.h1>
+          <HomeTitle />
           {/* subtitle */}
           <motion.p
             variants={fadeIn('down', 0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-10"
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-10 text-lg leading-relaxed"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-            labore architecto quos animi velit molestiae voluptas quod dicta
-            numquam vel! Vitae, maxime cupiditate quaerat explicabo quasi unde
-            voluptatum quod sapiente.
+            Hello there! My name is <span className="text-accent">Mykyta</span>{' '}
+            and I am a{' '}
+            <span className="text-accent">Junior Full Stack Developer</span>,
+            and welcome to my virtual world of code and creativity. Here, every
+            line is part of my story, and every project is an adventure. Ready
+            to explore? Let&apos;s start!
           </motion.p>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative">
@@ -60,7 +52,7 @@ const Home = () => {
         </div>
       </div>
       {/* image */}
-      <div className="w-[1200px] h-full absolute right-0 bottom-0">
+      <div className="w-[1200px] h-full absolute right-0 bottom-0 pointer-events-none">
         {/* bg img */}
         <div
           className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right 

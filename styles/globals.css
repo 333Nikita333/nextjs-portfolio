@@ -17,7 +17,18 @@
 .swiper-rtl .swiper-button-prev:after {
   color: #f13024;
 }
+.type::after {
+  content: '|';
+  font-weight: 500;
+  color: #f13024;
+  animation: cursor 1s infinite step-start;
+}
 
+@keyframes cursor {
+  50% {
+    opacity: 0;
+  }
+}
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;

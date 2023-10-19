@@ -1,7 +1,7 @@
-import { BsArrowRight } from 'react-icons/bs';
 import { motion } from 'framer-motion';
+import { BsArrowRight } from 'react-icons/bs';
+import { Circles } from '../../components';
 import { fadeIn } from '../../variants';
-import Circles from '/components/Circles';
 
 const Contact = () => {
   return (

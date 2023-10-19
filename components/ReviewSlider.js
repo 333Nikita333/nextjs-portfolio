@@ -1,14 +1,10 @@
 import Image from 'next/image';
-// import required modules
-import { Navigation, Pagination } from 'swiper';
-// import swiper react component
-import { Swiper, SwiperSlide } from 'swiper/react';
-// icons
 import { FaQuoteLeft } from 'react-icons/fa';
-// import swiper styles
+import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // testimonial data
 const reviewData = [

@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
+import { Bulb, Circles, WorkSlider } from '../../components';
 import { fadeIn } from '../../variants';
-import WorkSlider from '../../components/WorkSlider';
-import Bulb from '../../components/Bulb';
-import Circles from '../../components/Circles';
 
 const Work = () => {
   return (

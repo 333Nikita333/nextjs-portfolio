@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
+import { ReviewSlider } from '../../components';
 import { fadeIn } from '../../variants';
-import ReviewSlider from '../../components/ReviewSlider';
 
 const Reviews = () => {
   return (

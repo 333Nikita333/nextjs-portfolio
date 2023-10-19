@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import CountUp from 'react-countup';
 import {
-  FaHtml5,
   FaCss3,
+  FaFigma,
+  FaHtml5,
   FaJs,
   FaReact,
   FaWordpress,
-  FaFigma,
 } from 'react-icons/fa';
 import {
-  SiNextdotjs,
-  SiFramer,
-  SiAdobexd,
   SiAdobephotoshop,
+  SiAdobexd,
+  SiFramer,
+  SiNextdotjs,
 } from 'react-icons/si';
+import { Avatar, Circles } from '../../components';
 import { fadeIn } from '../../variants';
-import Avatar from '../../components/Avatar';
-import Circles from '../../components/Circles';
+
 //  data
 export const aboutData = [
   {

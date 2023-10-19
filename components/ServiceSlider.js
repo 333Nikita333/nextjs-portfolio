@@ -1,20 +1,16 @@
-// import required modules
+import {
+  RxArrowTopRight,
+  RxCrop,
+  RxDesktop,
+  RxPencil2,
+  RxReader,
+  RxRocket,
+} from 'react-icons/rx';
 import { FreeMode, Pagination } from 'swiper';
-// import swiper react component
-import { Swiper, SwiperSlide } from 'swiper/react';
-// import swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-//icons
-import {
-  RxCrop,
-  RxPencil2,
-  RxDesktop,
-  RxReader,
-  RxRocket,
-  RxArrowTopRight,
-} from 'react-icons/rx';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 export const serviceData = [
   // {
@@ -97,9 +93,7 @@ const ServiceSlider = () => {
             {/* title & desc */}
             <div className="mb-8">
               <div className="mb-2 text-lg">{item.title}</div>
-              <p className="max-w-[350px] leading-normal">
-                {item.description}
-              </p>
+              <p className="max-w-[350px] leading-normal">{item.description}</p>
             </div>
             {/* arrow */}
             <div className="text-3xl">

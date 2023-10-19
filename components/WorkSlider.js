@@ -1,14 +1,10 @@
-// import required modules
-import { Pagination } from 'swiper';
-// import swiper react component
-import { Swiper, SwiperSlide } from 'swiper/react';
-// icons
+import Image from 'next/image';
 import { BsArrowRight } from 'react-icons/bs';
-// import swiper styles
+import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // data
 const workSlides = {
