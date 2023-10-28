@@ -1,6 +1,7 @@
 import Avatar from './Avatar';
 import AnimatedTitle from './AnimatedTitle';
 import Bulb from './Bulb';
+import TooltipContainer from "./TooltipContainer";
 import Circles from './Circles';
 import Header from './Header';
 import Layout from './Layout';
@@ -18,6 +19,7 @@ export {
   Avatar,
   AnimatedTitle,
   Bulb,
+  TooltipContainer,
   Circles,
   Header,
   Layout,

@@ -7,6 +7,7 @@ import {
   SiAxios,
   SiExpress,
   SiGit,
+  SiJavascript,
   SiJsonwebtokens,
   SiMongodb,
   SiMongoose,
@@ -17,13 +18,15 @@ import {
   SiTypescript,
   SiVite,
   SiWebpack,
-  SiJavascript,
 } from 'react-icons/si';
 import { TbBrandReactNative, TbBrandVscode } from 'react-icons/tb';
-import { AnimatedTitle, Avatar, Circles } from '../../components';
+import {
+  AnimatedTitle,
+  Avatar,
+  Circles,
+  TooltipContainer,
+} from '../../components';
 import { fadeIn } from '../../variants';
-
-import SVG from "/public/cloudinary-icon.svg"
 
 export const aboutData = [
   {
@@ -118,6 +121,7 @@ export const counters = [
     text: 'Team projects',
   },
 ];
+
 const About = () => {
   const [index, setIndex] = useState(0);
 
@@ -239,24 +243,15 @@ const About = () => {
                   {/* icons of skills*/}
                   {item.icons?.map((icon, itemIndex) => (
                     <div
-                      className="relative flex items-center group text-2xl text-white transition-all duration-300 hover:text-accent"
+                      className="relative flex items-center group text-2xl text-white transition-all duration-300"
                       key={itemIndex}
                     >
-                      {/* clue */}
-                      <div className="absolute right-[150%] hidden xl:group-hover:flex">
-                        <div className="bg-white relative flex text-primary items-center p-[6px] rounded-[3px]">
-                          <div className="text-[12px] leading-none font-semibold capitalize">
-                            {icon.key}
-                          </div>
-                          {/* triangle for clue */}
-                          <div
-                            className="border-solid border-l-white border-l-16 border-y-transparent border-y-[6px] 
-                          border-r-0 absolute -right-2"
-                          ></div>
-                        </div>
-                      </div>
+                      <TooltipContainer
+                        position={'right-[150%]'}
+                        content={icon.key}
+                      />
 
-                      <div className='fill-inherit'>{icon}</div>
+                      {icon}
                     </div>
                   ))}
                 </div>
