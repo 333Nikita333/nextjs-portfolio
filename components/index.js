@@ -1,4 +1,5 @@
 import Avatar from './Avatar';
+import AnimatedTitle from './AnimatedTitle';
 import Bulb from './Bulb';
 import Circles from './Circles';
 import Header from './Header';
@@ -12,14 +13,13 @@ import Socials from './Socials';
 import TopLeftImg from './TopLeftImg';
 import Transition from './Transition';
 import WorkSlider from './WorkSlider';
-import HomeTitle from './HomeTitle';
 
 export {
   Avatar,
+  AnimatedTitle,
   Bulb,
   Circles,
   Header,
-  HomeTitle,
   Layout,
   Nav,
   ParticlesContainer,

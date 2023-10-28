@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import {
+  AnimatedTitle,
   Avatar,
   ParticlesContainer,
   ProjectsBtn,
-  HomeTitle,
 } from '../components';
 import { fadeIn } from '../variants';
 
@@ -20,7 +20,25 @@ const Home = () => {
         h-full container mx-auto"
         >
           {/* title */}
-          <HomeTitle />
+          <AnimatedTitle
+            tag="h1"
+            variants={fadeIn('down', 0.2)}
+            sequence={[
+              'Every line of code -',
+              500,
+              'small step into the future',
+              2500,
+              'Innovation through',
+              500,
+              'technology and creativity',
+              2500,
+              'Ideas turn into code,',
+              500,
+              'and code into reality',
+              2500,
+            ]}
+            classNames="h1"
+          />
           {/* subtitle */}
           <motion.p
             variants={fadeIn('down', 0.3)}

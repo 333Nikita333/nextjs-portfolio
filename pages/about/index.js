@@ -1,24 +1,30 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useState } from 'react';
 import CountUp from 'react-countup';
+import { FaCss3, FaDocker, FaHtml5, FaReact } from 'react-icons/fa';
 import {
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJs,
-  FaReact,
-  FaWordpress,
-} from 'react-icons/fa';
-import {
-  SiAdobephotoshop,
-  SiAdobexd,
-  SiFramer,
+  SiAxios,
+  SiExpress,
+  SiGit,
+  SiJsonwebtokens,
+  SiMongodb,
+  SiMongoose,
   SiNextdotjs,
+  SiPostman,
+  SiSwagger,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+  SiWebpack,
+  SiJavascript,
 } from 'react-icons/si';
-import { Avatar, Circles } from '../../components';
+import { TbBrandReactNative, TbBrandVscode } from 'react-icons/tb';
+import { AnimatedTitle, Avatar, Circles } from '../../components';
 import { fadeIn } from '../../variants';
 
-//  data
+import SVG from "/public/cloudinary-icon.svg"
+
 export const aboutData = [
   {
     title: 'skills',
@@ -26,92 +32,71 @@ export const aboutData = [
       {
         title: 'Front-end',
         icons: [
-          <FaHtml5 key="html5" />,
-          <FaCss3 key="css3" />,
-          <FaJs key="js" />,
-          <FaReact key="react" />,
-          <SiNextdotjs key="nextjs" />,
-          <FaHtml5 key="html5" />,
-          <FaCss3 key="css3" />,
-          <FaJs key="js" />,
-          <FaReact key="react" />,
-          <SiNextdotjs key="nextjs" />,
-          <FaHtml5 key="html5" />,
-          <FaCss3 key="css3" />,
-          <FaJs key="js" />,
-          <FaReact key="react" />,
-          <SiNextdotjs key="nextjs" />,
-          // <SiFramer key="framer" />,
-          // <FaWordpress key="wordpress" />,
+          <FaHtml5 key="HTML5" />,
+          <FaCss3 key="CSS3" />,
+          <SiJavascript key="JavaScript" />,
+          <SiTypescript key="TypeScript" />,
+          <FaReact key="React" />,
+          <TbBrandReactNative key="React Native" />,
+          <SiTailwindcss key="TailwindCSS" />,
+          <SiNextdotjs key="Next" />,
+          <SiAxios key="Axios" />,
         ],
       },
       {
         title: 'Back-end',
         icons: [
-          <FaHtml5 key="html5" />,
-          <FaCss3 key="css3" />,
-          <FaJs key="js" />,
-          <FaReact key="react" />,
-          <SiNextdotjs key="nextjs" />,
-          <FaHtml5 key="html5" />,
-          <FaCss3 key="css3" />,
-          <FaJs key="js" />,
-          <FaReact key="react" />,
-          <SiNextdotjs key="nextjs" />,
-          <FaHtml5 key="html5" />,
-          <FaCss3 key="css3" />,
-          <FaJs key="js" />,
-          <FaReact key="react" />,
-          <SiNextdotjs key="nextjs" />,
+          <Image
+            src={'/nodejs-icon.svg'}
+            height={24}
+            width={24}
+            key="Node"
+            alt="icon node.js"
+          />,
+          <SiExpress key="Express" />,
+          <SiMongodb key="MongoDB" />,
+          <SiMongoose key="Mongoose" />,
+          <SiSwagger key="Swagger" />,
+          <SiJsonwebtokens key="JWT" />,
+          <Image
+            src={'/cloudinary-icon.svg'}
+            height={24}
+            width={24}
+            alt="icon cloudinary"
+            key="Cloudinary"
+          />,
+          <FaDocker key="Docker" />,
+        ],
+      },
+      {
+        title: 'Common Tools',
+        icons: [
+          <TbBrandVscode key="VSCode" />,
+          <SiGit key="Git" />,
+          <SiWebpack key="Webpack" />,
+          <SiVite key="Vite" />,
+          <SiPostman key="Postman" />,
         ],
       },
     ],
   },
   {
-    title: 'awards',
-    info: [
-      // {
-      //   title: 'Webby Awards - Honoree',
-      //   stage: '2011 - 2012',
-      // },
-      // {
-      //   title: 'Adobe Design Achievement Awards - Finalist',
-      //   stage: '2009 - 2010',
-      // },
-    ],
-  },
-  {
-    title: 'experience',
-    info: [
-      // {
-      //   title: 'UX/UI Designer - XYZ Company',
-      //   stage: '2012 - 2023',
-      // },
-      // {
-      //   title: 'Web Developer - ABC Agency',
-      //   stage: '2010 - 2012',
-      // },
-      // {
-      //   title: 'Intern - DEF Corporation',
-      //   stage: '2008 - 2010',
-      // },
-    ],
-  },
-  {
     title: 'credentials',
     info: [
-      // {
-      //   title: 'Web Development - ABC University, LA, CA',
-      //   stage: '2011',
-      // },
-      // {
-      //   title: 'Computer Science Diploma - AV Technical Institute',
-      //   stage: '2009',
-      // },
-      // {
-      //   title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-      //   stage: '2006',
-      // },
+      {
+        title:
+          "Master's degree, Industrial and Сivil engineerin - Kyiv National University of Construction and Architecture, Kyiv, Ukraine",
+        stage: '2012-2016',
+      },
+    ],
+  },
+  {
+    title: 'certificates',
+    info: [
+      {
+        title: 'Full Stack Developer - GoIT Global, Ukraine',
+        stage: '2022-2023',
+      },
     ],
   },
 ];
@@ -121,19 +106,18 @@ export const counters = [
     text: 'Years of expirience',
   },
   {
-    end: 0,
-    text: 'Satisfied clients',
+    end: 750,
+    text: 'Hours of coding',
   },
   {
-    end: 10,
-    text: 'Finished projects',
+    end: 7,
+    text: 'Solo projects',
   },
   {
-    end: 0,
-    text: 'Winning awards',
+    end: 3,
+    text: 'Team projects',
   },
 ];
-
 const About = () => {
   const [index, setIndex] = useState(0);
 
@@ -152,23 +136,25 @@ const About = () => {
           <Avatar />
         </div>
       </motion.div>
-
       <div
         className="container mx-auto h-full flex flex-col items-center xl:flex-row 
       gap-x-6 max-sm:overflow-y-auto"
       >
         {/* text */}
         <div className="flex-1 flex flex-col xl:ml-12 max-xl:mb-3 mt-28 md:mt-24 lg:mt-20 xl:mt-0">
-          <motion.h2
+          <AnimatedTitle
+            tag="h2"
             variants={fadeIn('right', 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="h2"
-          >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent design.
-          </motion.h2>
+            sequence={[
+              'Designing the future with every line',
+              2500,
+              'From Passion to Profession',
+              2500,
+              'The story of my web journey',
+              2500,
+            ]}
+            classNames="h2"
+          />
           <motion.p
             variants={fadeIn('right', 0.4)}
             initial="hidden"
@@ -176,13 +162,11 @@ const About = () => {
             exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-2 xl:mb-3 px-2 xl:px-0"
           >
-            {/* 10 years ago, I began freelancing as a developer. Since then,
-            I&apos;ve done remote work for agencies, counsulted fro startups,
-            and collaborated on digital products for business and consumer use. */}
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. In
-            dolores, quae ipsa, necessitatibus, nam ea quam delectus ut
-            laboriosam facere praesentium et hic reiciendis voluptates atque
-            sunt. Corporis, at veritatis.
+            My journey began with a dream of creating something amazing in the
+            digital world. And since then I have not stopped drawing this dream,
+            adding new colors and shapes to every project I create. My work
+            experience and my achievements are part of this story, but the most
+            important thing for me is the constant desire to learn and grow.
           </motion.p>
           {/* counters */}
           <motion.div
@@ -254,8 +238,25 @@ const About = () => {
                 <div className="flex gap-4 flex-wrap max-sm:justify-center xl:mr-14">
                   {/* icons of skills*/}
                   {item.icons?.map((icon, itemIndex) => (
-                    <div className="text-2xl text-white" key={itemIndex}>
-                      {icon}
+                    <div
+                      className="relative flex items-center group text-2xl text-white transition-all duration-300 hover:text-accent"
+                      key={itemIndex}
+                    >
+                      {/* clue */}
+                      <div className="absolute right-[150%] hidden xl:group-hover:flex">
+                        <div className="bg-white relative flex text-primary items-center p-[6px] rounded-[3px]">
+                          <div className="text-[12px] leading-none font-semibold capitalize">
+                            {icon.key}
+                          </div>
+                          {/* triangle for clue */}
+                          <div
+                            className="border-solid border-l-white border-l-16 border-y-transparent border-y-[6px] 
+                          border-r-0 absolute -right-2"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div className='fill-inherit'>{icon}</div>
                     </div>
                   ))}
                 </div>
@@ -267,5 +268,4 @@ const About = () => {
     </div>
   );
 };
-
 export default About;
