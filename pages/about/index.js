@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import CountUp from 'react-countup';
-import { FaCss3, FaDocker, FaHtml5, FaReact } from 'react-icons/fa';
+import { FaCss3, FaSass, FaDocker, FaHtml5, FaReact } from 'react-icons/fa';
 import {
   SiAxios,
   SiExpress,
@@ -35,50 +35,53 @@ export const aboutData = [
       {
         title: 'Front-end',
         icons: [
-          <FaHtml5 key="HTML5" />,
-          <FaCss3 key="CSS3" />,
-          <SiJavascript key="JavaScript" />,
-          <SiTypescript key="TypeScript" />,
-          <FaReact key="React" />,
-          <TbBrandReactNative key="React Native" />,
-          <SiTailwindcss key="TailwindCSS" />,
-          <SiNextdotjs key="Next" />,
-          <SiAxios key="Axios" />,
+          <FaHtml5 title="HTML5" key="HTML5" />,
+          <FaCss3 title="CSS3" key="CSS3" />,
+          <FaSass title="SASS" key="SASS" />,
+          <SiJavascript title="JavaScript" key="JavaScript" />,
+          <SiTypescript title="TypeScript" key="TypeScript" />,
+          <FaReact title="React" key="React" />,
+          <TbBrandReactNative title="React Native" key="React Native" />,
+          <SiTailwindcss title="TailwindCSS" key="TailwindCSS" />,
+          <SiNextdotjs title="Next" key="Next" />,
+          <SiAxios title="Axios" key="Axios" />,
         ],
       },
       {
         title: 'Back-end',
         icons: [
           <Image
+            title="Node"
             src={'/nodejs-icon.svg'}
             height={24}
             width={24}
             key="Node"
             alt="icon node.js"
           />,
-          <SiExpress key="Express" />,
-          <SiMongodb key="MongoDB" />,
-          <SiMongoose key="Mongoose" />,
-          <SiSwagger key="Swagger" />,
-          <SiJsonwebtokens key="JWT" />,
+          <SiExpress title="Express" key="Express" />,
+          <SiMongodb title="MongoDB" key="MongoDB" />,
+          <SiMongoose title="Mongoose" key="Mongoose" />,
+          <SiSwagger title="Swagger" key="Swagger" />,
+          <SiJsonwebtokens title="JWT" key="JWT" />,
           <Image
+            title="Cloudinary"
             src={'/cloudinary-icon.svg'}
             height={24}
             width={24}
             alt="icon cloudinary"
             key="Cloudinary"
           />,
-          <FaDocker key="Docker" />,
+          <FaDocker title="Docker" key="Docker" />,
         ],
       },
       {
         title: 'Common Tools',
         icons: [
-          <TbBrandVscode key="VSCode" />,
-          <SiGit key="Git" />,
-          <SiWebpack key="Webpack" />,
-          <SiVite key="Vite" />,
-          <SiPostman key="Postman" />,
+          <TbBrandVscode title="VSCode" key="VSCode" />,
+          <SiGit title="Git" key="Git" />,
+          <SiWebpack title="Webpack" key="Webpack" />,
+          <SiVite title="Vite" key="Vite" />,
+          <SiPostman title="Postman" key="Postman" />,
         ],
       },
     ],
