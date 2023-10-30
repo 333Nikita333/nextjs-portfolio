@@ -1,11 +1,11 @@
+import Image from 'next/image';
 import { FaServer, FaWrench } from 'react-icons/fa';
 import { RxArrowTopRight, RxDesktop, RxMobile } from 'react-icons/rx';
-import { FreeMode, Pagination } from 'swiper';
+import { Autoplay, FreeMode, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from 'next/image';
 
 export const serviceData = [
   {
@@ -64,21 +64,29 @@ const ServiceSlider = () => {
       pagination={{
         clickable: true,
       }}
-      modules={[FreeMode, Pagination]}
+      autoplay={{
+        delay: 3000,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
+      }}
+      modules={[Autoplay, FreeMode, Pagination]}
       className="h-[240px] sm:h-[340px]"
     >
       {serviceData.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="bg-[#412f7b15] h-max xl:h-[340px] rounded-lg px-5 py-7 flex sm:flex-col gap-x-5 sm:gap-x-0 group cursor-pointer hover:bg-[#5941a915] transition-all duration-300">
+          <div
+            className="bg-[#412f7b15] h-max sm:h-[340px] sm:overflow-y-auto md:overflow-y-hidden rounded-lg px-5 
+            py-7 flex sm:flex-col gap-x-5 sm:gap-x-0 group cursor-pointer hover:bg-[#5941a915] transition-all duration-300"
+          >
             {/* icon */}
             <div className="text-4xl text-accent mb-3">{item.icon}</div>
             {/* title & desc */}
-            <div className="max-xl:mb-6">
+            <div className="max-sm:mb-6">
               <div className="mb-2 text-lg">{item.title}</div>
               <p className="max-w-[350px] leading-normal">{item.description}</p>
             </div>
             {/* arrow */}
-            <div className="text-3xl xl:mt-auto">
+            <div className="text-3xl sm:mt-auto">
               <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
             </div>
           </div>
