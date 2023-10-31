@@ -1,4 +1,5 @@
 import Image from 'next/image';
+// import { useState } from 'react';
 import { FaServer, FaWrench } from 'react-icons/fa';
 import { RxArrowTopRight, RxDesktop, RxMobile } from 'react-icons/rx';
 import { Autoplay, FreeMode, Pagination } from 'swiper';
@@ -6,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
+// import { motion, useAnimation } from 'framer-motion';
 
 export const serviceData = [
   {
@@ -66,24 +68,35 @@ const ServiceSlider = () => {
       }}
       autoplay={{
         delay: 3000,
-        pauseOnMouseEnter: true,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       }}
       modules={[Autoplay, FreeMode, Pagination]}
-      className="h-[240px] sm:h-[340px]"
+      className="h-[240px] sm:h-[330px]"
     >
       {serviceData.map((item, index) => (
         <SwiperSlide key={index}>
           <div
-            className="bg-[#412f7b15] h-max sm:h-[340px] sm:overflow-y-auto md:overflow-y-hidden rounded-lg px-5 
-            py-7 flex sm:flex-col gap-x-5 sm:gap-x-0 group cursor-pointer hover:bg-[#5941a915] transition-all duration-300"
+            className="overflow-hidden bg-[#412f7b15] h-max sm:h-[300px] 
+            sm:overflow-y-auto md:overflow-y-hidden rounded-lg px-5 py-7 flex sm:flex-col gap-x-5 sm:gap-x-0 group 
+            cursor-pointer hover:bg-[#5941a915] transition-all duration-300"
           >
             {/* icon */}
             <div className="text-4xl text-accent mb-3">{item.icon}</div>
             {/* title & desc */}
-            <div className="max-sm:mb-6">
-              <div className="mb-2 text-lg">{item.title}</div>
-              <p className="max-w-[350px] leading-normal">{item.description}</p>
+            <div className="max-sm:mb-6 sm:relative">
+              <h3
+                className="mb-2 text-2xl sm:absolute sm:top-0 sm:group-hover:-translate-x-72 sm:group-focus:-translate-x-72 
+                sm:transition-all sm:duration-300"
+              >
+                {item.title}
+              </h3>
+              <p
+                className="max-w-[350px] leading-normal sm:absolute sm:top-0 sm:translate-x-72 sm:group-hover:translate-x-0 
+                sm:group-focus:translate-x-0 sm:transition-all sm:duration-300"
+              >
+                {item.description}
+              </p>
             </div>
             {/* arrow */}
             <div className="text-3xl sm:mt-auto">
@@ -97,3 +110,45 @@ const ServiceSlider = () => {
 };
 
 export default ServiceSlider;
+// {serviceData.map((item, index) => (
+//   <SwiperSlide key={index}>
+//     <div
+//       onMouseEnter={() => handleMouseEnter(index)}
+//       onMouseLeave={handleMouseLeave}
+//       className="bg-[#412f7b15] h-max sm:h-[340px] sm:overflow-y-auto md:overflow-y-hidden rounded-lg px-5
+//       py-7 flex sm:flex-col gap-x-5 sm:gap-x-0 group cursor-pointer hover:bg-[#5941a915] transition-all duration-300"
+//     >
+//       {/* icon */}
+//       <div className="text-4xl text-accent mb-3">{item.icon}</div>
+//       {/* title & desc */}
+//       <div className="max-sm:mb-6 relative">
+//         <motion.div
+//           initial={{ x: 0, opacity: 1 }}
+//           animate={{
+//             x: hoveredIndex === index ? -50 : 0,
+//             opacity: hoveredIndex === index ? 0 : 1,
+//           }}
+//           transition={{ duration: 0.3 }}
+//           className="mb-2 text-lg absolute top-0"
+//         >
+//           {item.title}
+//         </motion.div>
+//         <motion.p
+//           initial={{ x: 50, opacity: 0 }}
+//           animate={{
+//             x: hoveredIndex === index ? 0 : 50,
+//             opacity: hoveredIndex === index ? 1 : 0,
+//           }}
+//           transition={{ duration: 0.3 }}
+//           className="max-w-[350px] leading-normal absolute top-0"
+//         >
+//           {item.description}
+//         </motion.p>
+//       </div>
+//       {/* arrow */}
+//       <div className="text-3xl sm:mt-auto">
+//         <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
+//       </div>
+//     </div>
+//   </SwiperSlide>
+// ))}
