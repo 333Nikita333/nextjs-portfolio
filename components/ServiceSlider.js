@@ -1,5 +1,5 @@
 import Image from 'next/image';
-// import { useState } from 'react';
+
 import { FaServer, FaWrench } from 'react-icons/fa';
 import { RxArrowTopRight, RxDesktop, RxMobile } from 'react-icons/rx';
 import { Autoplay, FreeMode, Pagination } from 'swiper';
@@ -7,7 +7,6 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { motion, useAnimation } from 'framer-motion';
 
 export const serviceData = [
   {
@@ -72,7 +71,7 @@ const ServiceSlider = () => {
         pauseOnMouseEnter: true,
       }}
       modules={[Autoplay, FreeMode, Pagination]}
-      className="h-[240px] sm:h-[330px]"
+      className="h-[250px] sm:h-[330px]"
     >
       {serviceData.map((item, index) => (
         <SwiperSlide key={index}>

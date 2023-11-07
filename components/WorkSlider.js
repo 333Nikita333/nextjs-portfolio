@@ -1,66 +1,91 @@
 import Image from 'next/image';
-import { BsArrowRight } from 'react-icons/bs';
-import { Pagination } from 'swiper';
+import { FaHandPointRight } from 'react-icons/fa';
+import { Autoplay, FreeMode, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// data
 const workSlides = {
   slides: [
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'Lushwood Haven',
+          path: '/lushwood-haven.jpg',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'Phonebook',
+          path: '/lushwood-haven.jpg',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'GooseTrack',
+          path: '/goose-track.jpg',
         },
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'Web Studio',
+          path: '/web-studio.jpg',
         },
       ],
     },
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'Phonebook API',
+          path: '/phonebook-api.jpg',
         },
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'Ice Cream',
+          path: '/ice-cream.jpg',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'Filmoteka',
+          path: '/filmoteka.jpg',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'Image Publish App',
+          path: '/lushwood-haven.jpg',
         },
       ],
     },
+    // {
+    //   images: [
+    //     {
+    //       title: 'Ip Adress Tracker',
+    //       path: '/lushwood-haven.jpg',
+    //     },
+    //     {
+    //       title: 'Image Gallery',
+    //       path: '/lushwood-haven.jpg',
+    //     },
+    //     {
+    //       title: 'Movie Search',
+    //       path: '/lushwood-haven.jpg',
+    //     },
+    //     {
+    //       title: 'Image Search',
+    //       path: '/lushwood-haven.jpg',
+    //     },
+    //   ],
+    // },
   ],
 };
 
 const WorkSlider = () => {
   return (
     <Swiper
-      spaceBetween={10}
+      spaceBetween={15}
+      freeMode={true}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
       pagination={{
         clickable: true,
       }}
-      modules={[Pagination]}
-      className="h-[280px] sm:h-[480px]"
+      modules={[Autoplay, FreeMode, Pagination]}
+      className="h-[380px] sm:h-[530px]"
     >
       {workSlides.slides.map((slide, index) => (
         <SwiperSlide key={index}>
@@ -76,34 +101,32 @@ const WorkSlider = () => {
                 group"
                 >
                   {/* images */}
-                  <Image src={image.path} width={500} height={300} alt="" />
+                  <Image
+                    src={image.path}
+                    width={500}
+                    height={300}
+                    alt={image.title}
+                  />
                   {/* overlay gradient */}
                   <div
                     className="absolute inset-0 bg-gradient-to-l from-transparent 
                   via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 
                   transition-all duration-700"
                   ></div>
-                  {/* title */}
+                  {/* info description*/}
                   <div
                     className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 
                   group-hover:xl:-translate-y-20 transition-all duration-300"
                   >
                     <div className="flex items-center gap-x-2">
-                      {/* title part 1 */}
-                      <div className="delay-100">LIVE</div>
-                      {/* title part 2 */}
-                      <div
-                        className="translate-y-[500%] group-hover:translate-y-0 transition-all 
-                      duration-300 delay-150"
-                      >
-                        PROJECT
-                      </div>
+                      {/* title*/}
+                      <h3 className="text-xl delay-100">{image.title}</h3>
                       {/* icon */}
                       <div
                         className="text-xl translate-y-[500%] group-hover:translate-y-0 
                       transition-all duration-300 delay-200"
                       >
-                        <BsArrowRight />
+                        <FaHandPointRight size={40} className="text-accent" />
                       </div>
                     </div>
                   </div>
