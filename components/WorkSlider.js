@@ -44,7 +44,7 @@ const workSlides = {
         },
         {
           title: 'Image Publish App',
-          path: '/lushwood-haven.jpg',
+          path: '/image-publish-app.jpg',
         },
       ],
     },
@@ -77,7 +77,7 @@ const WorkSlider = () => {
       spaceBetween={15}
       freeMode={true}
       autoplay={{
-        delay: 3000,
+        delay: 4000,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       }}
