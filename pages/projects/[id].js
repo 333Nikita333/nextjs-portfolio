@@ -4,22 +4,29 @@ import { Circles } from '../../components';
 
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.BASE_URL}/api/projects`);
-  
+
   const projects = await response.json();
 
-  const paths = projects.map(project => ({
-    params: { id: project.id },
+  const paths = projects.map(({ id }) => ({
+    params: { id: id.toString() },
   }));
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
-  const { id } = params;
+export async function getStaticProps(context) {
+  console.log('context =>', context);
+  const { id } = context.params;
 
   const response = await fetch(`${process.env.BASE_URL}/api/projects/${id}`);
   const project = await response.json();
 
+  if (!project) {
+    return {
+      notFound: true,
+    };
+  }
+  
   return {
     props: {
       project,
@@ -28,13 +35,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Project({ project }) {
-  console.log('Страница одного проекта, данные проекта =>', project);
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div className="h-full bg-primary/30 py-32 flex items-center max-xl:overflow-y-auto">
       <Circles />
