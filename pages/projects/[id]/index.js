@@ -39,7 +39,7 @@ export default function Project({ project }) {
     <div className="h-full bg-primary/30 py-32 flex items-center max-xl:overflow-y-auto">
       <Circles />
       <div className="container mx-auto max-xl:mt-auto xl:mt-12">
-        <Link href={'/work'}>Go back</Link>
+        <Link href={'/projects'}>Go back</Link>
         <h2>{project.name}</h2>
         <p>{project.description}</p>
       </div>
