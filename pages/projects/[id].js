@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Circles } from '../../../components';
+import { Circles } from '../../components';
 
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.BASE_URL}/api/projects`);
