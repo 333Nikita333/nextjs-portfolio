@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import { Circles } from '../../components';
 
 export async function getStaticPaths() {
-  const response = await fetch(`${process.env.BASE_URL}/api/projects`);
-
-  const projects = await response.json();
-
-  const paths = projects.map(({ id }) => ({
-    params: { id: id.toString() },
+  const projectsData = await fetch(`${process.env.BASE_URL}/api/projects`).then(
+    res => res.json(),
+  );
+  
+  const paths = projectsData.map(project => ({
+    params: { id: project.id.toString() },
   }));
 
   return { paths, fallback: false };
