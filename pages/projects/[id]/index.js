@@ -1,11 +1,11 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Circles } from '../../../components';
-import Link from 'next/link';
 
 export async function getStaticPaths() {
-  const projects = await fetch(`${process.env.BASE_URL}/api/projects`).then(
-    res => res.json(),
-  );
+  const response = await fetch(`${process.env.BASE_URL}/api/projects`);
+  
+  const projects = await response.json();
 
   const paths = projects.map(project => ({
     params: { id: project.id },
