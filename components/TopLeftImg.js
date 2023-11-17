@@ -2,7 +2,10 @@ import Image from 'next/image';
 
 const TopLeftImg = () => {
   return (
-    <div className="absolute left-0 top-0 mix-blend-color-dodge z-0 w-[200px] xl:w-[400px] opacity-50">
+    <div
+      className="absolute pointer-events-none left-0 top-0 mix-blend-color-dodge w-[200px] 
+      xl:w-[400px] opacity-50"
+    >
       <Image
         src="/top-left-img.png"
         width={400}

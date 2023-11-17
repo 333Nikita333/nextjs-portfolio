@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { AnimatedTitle, Bulb, Circles, WorkSlider } from '../../components';
 import { fadeIn } from '../../variants';
 
-const Work = () => {
+const Projects = () => {
   return (
     <div className="h-full bg-primary/30 py-28 flex items-center max-xl:overflow-y-auto">
       <Circles />
@@ -16,7 +16,7 @@ const Work = () => {
               sequence={[
                 'My works',
                 2500,
-                'Inspiration in every line',
+                'My history',
                 2500,
                 'My web collection',
                 2500,
@@ -55,4 +55,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;

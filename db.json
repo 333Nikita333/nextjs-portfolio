@@ -1,0 +1,30 @@
+[
+  {
+    "id": "lushwood-haven",
+    "image": "https://picsum.photos/200/300",
+    "name": "Lushwood Haven",
+    "type": "Solo Project",
+    "technologies": ["tech1", "tech2", "tech3"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sed temporibus modi nemo architecto quo, est eligendi dignissimos doloremque soluta ex porro numquam provident natus iure laboriosam aliquam adipisci omnis?",
+    "features": [
+      { "featureName": "feature1", "featureDesc": "featureDesc1" },
+      { "featureName": "feature2", "featureDesc": "featureDesc2" },
+      { "featureName": "feature3", "featureDesc": "featureDesc3" }
+    ]
+  },
+  {
+    "id": "goose-track",
+    "image": "https://picsum.photos/200/300",
+    "name": "Goose Track",
+    "technologies": ["tech1", "tech2", "tech3"],
+    "type": "Team Project",
+    "role": "SCRUM Master",
+    "responsibilities": ["resp1", "resp2", "resp3"],
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sed temporibus modi nemo architecto quo, est eligendi dignissimos doloremque soluta ex porro numquam provident natus iure laboriosam aliquam adipisci omnis?",
+    "features": [
+      { "featureName": "feature1", "featureDesc": "featureDesc1" },
+      { "featureName": "feature2", "featureDesc": "featureDesc2" },
+      { "featureName": "feature3", "featureDesc": "featureDesc3" }
+    ]
+  }
+]
