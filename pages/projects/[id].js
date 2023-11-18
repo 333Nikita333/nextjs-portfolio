@@ -1,12 +1,8 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { Circles } from '../../components';
+import projectsData from '/db.json';
 
 export async function getStaticPaths() {
-  const projectsData = await fetch(`${process.env.BASE_URL}/api/projects`).then(
-    res => res.json(),
-  );
-  
   const paths = projectsData.map(project => ({
     params: { id: project.id.toString() },
   }));
@@ -15,18 +11,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  console.log('context =>', context);
   const { id } = context.params;
+  // console.log('getStaticProps, id =>', id);
 
-  const response = await fetch(`${process.env.BASE_URL}/api/projects/${id}`);
-  const project = await response.json();
+  const project = projectsData.find(project => project.id === id);
 
   if (!project) {
     return {
       notFound: true,
     };
   }
-  
+
   return {
     props: {
       project,
