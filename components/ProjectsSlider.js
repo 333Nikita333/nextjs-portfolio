@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaHandPointRight } from 'react-icons/fa';
-import { Autoplay, FreeMode, Pagination } from 'swiper';
+import { Autoplay, FreeMode, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -18,7 +19,7 @@ const projectSlides = {
         },
         {
           title: 'Phonebook',
-          imagePath: '/lushwood-haven.jpg',
+          imagePath: '/phonebook.jpg',
           link: 'phonebook',
         },
         {
@@ -97,7 +98,9 @@ const ProjectsSlider = () => {
       pagination={{
         clickable: true,
       }}
-      modules={[Autoplay, FreeMode, Pagination]}
+      scrollbar={{ draggable: true }}
+      navigation
+      modules={[Autoplay, FreeMode, Pagination, Navigation]}
       className="h-[380px] sm:h-[530px]"
     >
       {projectSlides.slides.map((slide, index) => (

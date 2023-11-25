@@ -1,35 +1,36 @@
-import Avatar from './Avatar';
 import AnimatedTitle from './AnimatedTitle';
+import Avatar from './Avatar';
 import Bulb from './Bulb';
-import TooltipContainer from "./TooltipContainer";
 import Circles from './Circles';
 import Header from './Header';
 import Layout from './Layout';
 import Nav from './Nav';
 import ParticlesContainer from './ParticlesContainer';
 import ProjectsBtn from './ProjectsBtn';
+import ProjectsSlider from './ProjectsSlider';
 import ReviewSlider from './ReviewSlider';
 import ServiceSlider from './ServiceSlider';
 import Socials from './Socials';
+import TooltipContainer from './TooltipContainer';
 import TopLeftImg from './TopLeftImg';
 import Transition from './Transition';
-import WorkSlider from './WorkSlider';
 
 export {
-  Avatar,
   AnimatedTitle,
+  Avatar,
   Bulb,
-  TooltipContainer,
   Circles,
   Header,
   Layout,
   Nav,
   ParticlesContainer,
   ProjectsBtn,
+  ProjectsSlider,
   ReviewSlider,
   ServiceSlider,
   Socials,
+  TooltipContainer,
   TopLeftImg,
-  Transition,
-  WorkSlider,
+  Transition
 };
+

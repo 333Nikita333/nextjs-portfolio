@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { Circles } from '../../components';
-import projectsData from '/db.json';
+import { projectData } from './projectData';
 
 export async function getStaticPaths() {
-  const paths = projectsData.map(project => ({
+  const paths = projectData.map(project => ({
     params: { id: project.id.toString() },
   }));
 
@@ -14,7 +14,7 @@ export async function getStaticProps(context) {
   const { id } = context.params;
   // console.log('getStaticProps, id =>', id);
 
-  const project = projectsData.find(project => project.id === id);
+  const project = projectData.find(project => project.id === id);
 
   if (!project) {
     return {
@@ -30,6 +30,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Project({ project }) {
+  console.log('project =>', project);
   return (
     <div className="h-full bg-primary/30 py-32 flex items-center max-xl:overflow-y-auto">
       <Circles />

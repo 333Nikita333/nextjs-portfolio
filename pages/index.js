@@ -17,7 +17,7 @@ const Home = () => {
       >
         <div
           className="text-center flex flex-col justify-center xl:pt-40 xl:text-left 
-        h-full container mx-auto"
+        h-full container mx-auto xl:ml-28"
         >
           {/* title */}
           <AnimatedTitle

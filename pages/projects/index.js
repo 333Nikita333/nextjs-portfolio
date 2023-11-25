@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { AnimatedTitle, Bulb, Circles, WorkSlider } from '../../components';
+import { AnimatedTitle, Bulb, Circles, ProjectsSlider } from '../../components';
 import { fadeIn } from '../../variants';
 
 const Projects = () => {
@@ -46,7 +46,7 @@ const Projects = () => {
             exit="hidden"
             className="w-full xl:max-w-[65%]"
           >
-            <WorkSlider />
+            <ProjectsSlider />
           </motion.div>
         </div>
       </div>
