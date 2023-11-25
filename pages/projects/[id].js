@@ -30,7 +30,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Project({ project }) {
-  console.log('project =>', project);
+  // console.log('project =>', project);
   return (
     <div className="h-full bg-primary/30 py-32 flex items-center max-xl:overflow-y-auto">
       <Circles />

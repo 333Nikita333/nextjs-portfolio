@@ -1,4 +1,5 @@
 export const projectData = [
+  // 9-Lushwood Haven
   {
     id: 'lushwood-haven',
     imagePath: '/lushwood-haven.jpg',
@@ -65,6 +66,7 @@ export const projectData = [
       'Swiper',
     ],
   },
+  // 8-Goose Track
   {
     id: 'goose-track',
     imagePath: '/goose-track.jpg',
@@ -136,6 +138,117 @@ export const projectData = [
       'Yup',
     ],
   },
+  // 7-Phonebook API
+  {
+    id: 'phonebook-api',
+    imagePath: '/phonebook-api.jpg',
+    projectName: 'Phonebook API',
+    type: 'Solo Project',
+    description:
+      'Personal phone book backend based on MongoDB database that allows users to add, edit, delete and view their contacts. The application implements user registration and authentication. Authorized users can add, edit, delete and view their contacts',
+    features: [
+      {
+        featureName: 'Authorization',
+        featureDesc:
+          'User registration and login, including through Google authenticationed',
+      },
+      {
+        featureName: 'Verification',
+        featureDesc: 'User verification by sending an email',
+      },
+      {
+        featureName: 'Contact Manager',
+        featureDesc:
+          'Implemented routes for interacting with the contact book: obtaining all user contacts, as well as creating, editing and deleting a contact',
+      },
+      {
+        featureName: 'Security',
+        featureDesc:
+          'Implemented user data protection using access tokens (JWT) and password hashing (bcrypt)',
+      },
+    ],
+    technologies: [
+      'NodeJS',
+      'ExpressJS',
+      'Bcrypt',
+      'Cloudinary',
+      'Cors',
+      'Dotenv',
+      'Jest',
+      'Joi',
+      'JsonWebToken',
+      'Mongoose',
+      'Morgan',
+      'Multer',
+      'Nanoid',
+      'Nodemailer',
+      'Nodemon',
+      'Supertest',
+      'Swagger-ui-express',
+      'Passport',
+      'Passport-google-oauth20',
+    ],
+  },
+  // 6-Image Publish App
+  {
+    id: 'image-publish-app',
+    imagePath: '/image-publish-app.jpg',
+    projectName: 'Image Publish App',
+    type: 'Solo Project',
+    description:
+      'Image Publish App is a mobile application that allows users to create posts and add descriptions based on images. Users can like the post, go to the comments section and view a map with a marker indicating the location where the photo was taken.',
+    features: [
+      {
+        featureName: 'Firebase',
+        featureDesc:
+          'Register and login to your app using Firebase authentication. All user data is stored in the Firebase cloud database for reliability and availability.',
+      },
+      {
+        featureName: 'Publishing posts',
+        featureDesc:
+          'Publishing posts in the form of photographs with descriptions',
+      },
+      {
+        featureName: 'Personal collection of posts',
+        featureDesc: 'View your own collection of posts on your profile',
+      },
+      {
+        featureName: 'Comments and likes',
+        featureDesc: 'Integrated ability to like and comment on posts',
+      },
+      {
+        featureName: 'Geolocation of photos',
+        featureDesc: 'View a map to see where each photo was taken',
+      },
+    ],
+    technologies: [
+      'ReactJS',
+      'Firebase',
+      'Redux Toolkit',
+      'Redux-persist',
+      'React-native',
+      'React-native-gesture-handler',
+      'React-native-maps',
+      'React-native-reanimated',
+      'React-native-safe-area-context',
+      'React-native-screens',
+      'React-native-uuid',
+      'React-native-dotenv',
+      'React-navigation',
+      'Vector-icons',
+      'Expo',
+      'Expo-camera',
+      'Expo-dev-client',
+      'Expo-font',
+      'Expo-image-picker',
+      'Expo-location',
+      'Expo-media-library',
+      'Expo-splash-screen',
+      'Expo-status-bar',
+      'Expo-updates',
+    ],
+  },
+  // 5-Phonebook App
   {
     id: 'phonebook',
     imagePath: '/phonebook.jpg',
@@ -190,87 +303,107 @@ export const projectData = [
       'Yup',
     ],
   },
+  // 4-IP Adress Tracker
   {
-    id: 'web-studio',
-    imagePath: '/web-studio.jpg',
-    projectName: 'Web Studio',
+    id: 'ip-adress-tracker',
+    imagePath: '/ip-adress-tracker.jpg',
+    projectName: 'IP Adress Tracker',
     type: 'Solo Project',
     description:
-      'This project is an adaptive HTML layout for three versions: mobile, tablet, and desktop, utilizing the SASS preprocessor and following the BEM methodology',
+      'IP Adress Tracker project is a web application developed using React and Vite to get location information from an IP address. It allows the user to enter an IP address and get data such as location, time zone, and internet connection provider. In addition, the application also displays a map with a marker indicating the location based on the received data',
     features: [
+      {
+        featureName: 'IP Address Tracking',
+        featureDesc: 'Get instant access to key location information',
+      },
+      {
+        featureName: 'Detailed Information',
+        featureDesc:
+          'Find out information about your Internet service provider and time zone by IP address',
+      },
+      {
+        featureName: 'Interactive map',
+        featureDesc:
+          'Detailed location visualization showing country, city and region on an interactive map',
+      },
+      {
+        featureName: 'Speed and simplicity',
+        featureDesc: 'Instant results without the need to reload the page',
+      },
       {
         featureName: 'Adaptability',
         featureDesc:
-          'The application is designed to work seamlessly on mobile, tablets, and desktop',
-      },
-      {
-        featureName: 'SASS Preprocessor',
-        featureDesc:
-          'SASS is used to write more maintainable and structured CSS code, making it easier to manage styles',
-      },
-      {
-        featureName: 'BEM Methodology',
-        featureDesc:
-          'We follow the Block, Element, Modifier (BEM) methodology for class naming, ensuring consistency and maintainability',
-      },
-      {
-        featureName: 'Image Optimization',
-        featureDesc:
-          'All images have been optimized for different screen sizes to improve performance and reduce load times',
-      },
-    ],
-    technologies: ['HTML5', 'CSS3', 'SASS', 'Bem', 'JS'],
-  },
-  {
-    id: 'phonebook-api',
-    imagePath: '/phonebook-api.jpg',
-    projectName: 'Phonebook API',
-    type: 'Solo Project',
-    description:
-      'Personal phone book backend based on MongoDB database that allows users to add, edit, delete and view their contacts. The application implements user registration and authentication. Authorized users can add, edit, delete and view their contacts',
-    features: [
-      {
-        featureName: 'Authorization',
-        featureDesc:
-          'User registration and login, including through Google authenticationed',
-      },
-      {
-        featureName: 'Verification',
-        featureDesc: 'User verification by sending an email',
-      },
-      {
-        featureName: 'Contact Manager',
-        featureDesc:
-          'Implemented routes for interacting with the contact book: obtaining all user contacts, as well as creating, editing and deleting a contact',
-      },
-      {
-        featureName: 'Security',
-        featureDesc:
-          'Implemented user data protection using access tokens (JWT) and password hashing (bcrypt)',
+          'Adaptive design ensuring comfortable use of the application on various devices',
       },
     ],
     technologies: [
-      'NodeJS',
-      'ExpressJS',
-      'Bcrypt',
-      'Cloudinary',
-      'Cors',
-      'Dotenv',
-      'Jest',
-      'Joi',
-      'JsonWebToken',
-      'Mongoose',
-      'Morgan',
-      'Multer',
-      'Nanoid',
-      'Nodemailer',
-      'Nodemon',
-      'Supertest',
-      'Swagger-ui-express',
-      'Passport',
-      'Passport-google-oauth20',
+      'Vite',
+      'ReactJS',
+      'Axios',
+      'Leaflet',
+      'React-hook-form',
+      'React-icons',
+      'React-leaflet',
+      'React-router',
+      'React-toastify',
+      'Styled-components',
     ],
   },
+  // 3-Filmoteka
+  {
+    id: 'filmoteka',
+    imagePath: '/filmoteka.jpg',
+    projectName: 'Filmoteka',
+    type: 'Team Project',
+    role: 'SCRUM Master',
+    responsibilities: [
+      'Organization of team work',
+      'Code refactoring',
+      'Scroll up button',
+      'Adding common and reset styles',
+      'Image optimization',
+    ],
+    description:
+      'Filmoteka is an application that provides a convenient way to manage your film collection, providing detailed information and the ability to save your favorite films',
+    features: [
+      {
+        featureName: 'Large catalog',
+        featureDesc: 'Displaying an extensive movie catalog',
+      },
+      {
+        featureName: 'Detailed information',
+        featureDesc: 'Getting complete information about each movie',
+      },
+      {
+        featureName: 'Personal collection',
+        featureDesc: 'Creating your own movie collection',
+      },
+      {
+        featureName: 'Local storage',
+        featureDesc:
+          'Use local storage to save movies to your collection even when you close the app',
+      },
+      {
+        featureName: 'REST API',
+        featureDesc:
+          'External REST API for additional movie information, keeping data up to date',
+      },
+    ],
+    technologies: [
+      'HTML5',
+      'CSS3',
+      'SASS',
+      'BEM',
+      'JS',
+      'Axios',
+      'Basiclightbox',
+      'Handlebars',
+      'Modern-normalize',
+      'Notiflix',
+      'Tui-pagination',
+    ],
+  },
+  // 2-Ice Cream
   {
     id: 'ice-cream',
     imagePath: '/ice-cream.jpg',
@@ -331,61 +464,36 @@ export const projectData = [
       'Modern-normalize',
     ],
   },
+  // 1-Web Studio
   {
-    id: 'filmoteka',
-    imagePath: '/filmoteka.jpg',
-    projectName: 'Filmoteka',
-    type: 'Team Project',
-    role: 'SCRUM Master',
-    responsibilities: [
-      'Organization of team work',
-      'Code refactoring',
-      'Scroll up button',
-      'Adding common and reset styles',
-      'Image optimization',
-    ],
+    id: 'web-studio',
+    imagePath: '/web-studio.jpg',
+    projectName: 'Web Studio',
+    type: 'Solo Project',
     description:
-      'Filmoteka is an application that provides a convenient way to manage your film collection, providing detailed information and the ability to save your favorite films',
+      'This project is an adaptive HTML layout for three versions: mobile, tablet, and desktop, utilizing the SASS preprocessor and following the BEM methodology',
     features: [
       {
-        featureName: 'Large catalog',
-        featureDesc: 'Displaying an extensive movie catalog',
-      },
-      {
-        featureName: 'Detailed information',
-        featureDesc: 'Getting complete information about each movie',
-      },
-      {
-        featureName: 'Personal collection',
-        featureDesc: 'Creating your own movie collection',
-      },
-      {
-        featureName: 'Local storage',
+        featureName: 'Adaptability',
         featureDesc:
-          'Use local storage to save movies to your collection even when you close the app',
+          'The application is designed to work seamlessly on mobile, tablets, and desktop',
       },
       {
-        featureName: 'REST API',
+        featureName: 'SASS Preprocessor',
         featureDesc:
-          'External REST API for additional movie information, keeping data up to date',
+          'SASS is used to write more maintainable and structured CSS code, making it easier to manage styles',
+      },
+      {
+        featureName: 'BEM Methodology',
+        featureDesc:
+          'We follow the Block, Element, Modifier (BEM) methodology for class naming, ensuring consistency and maintainability',
+      },
+      {
+        featureName: 'Image Optimization',
+        featureDesc:
+          'All images have been optimized for different screen sizes to improve performance and reduce load times',
       },
     ],
-    technologies: ['tech1', 'tech2', 'tech3'],
-  },
-  {
-    id: 'image-publish-app',
-    imagePath: 'https://picsum.photos/200/300',
-    projectName: 'Goose Track',
-    technologies: ['tech1', 'tech2', 'tech3'],
-    type: 'Team Project',
-    role: 'SCRUM Master',
-    responsibilities: ['resp1', 'resp2', 'resp3'],
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sed temporibus modi nemo architecto quo, est eligendi dignissimos doloremque soluta ex porro numquam provident natus iure laboriosam aliquam adipisci omnis?',
-    features: [
-      { featureName: 'feature1', featureDesc: 'featureDesc1' },
-      { featureName: 'feature2', featureDesc: 'featureDesc2' },
-      { featureName: 'feature3', featureDesc: 'featureDesc3' },
-    ],
+    technologies: ['HTML5', 'CSS3', 'SASS', 'Bem', 'JS'],
   },
 ];

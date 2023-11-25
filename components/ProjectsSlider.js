@@ -58,30 +58,15 @@ const projectSlides = {
         },
       ],
     },
-    // {
-    //   images: [
-    //     {
-    //       title: 'Ip Adress Tracker',
-    //       imagePath: '/ip-adress-tracker.jpg',
-    //       link: 'ip-adress-tracker',
-    //     },
-    //     {
-    //       title: 'Image Gallery',
-    //       imagePath: '/image-gallery.jpg',
-    //       link: 'image-gallery',
-    //     },
-    //     {
-    //       title: 'Movie Search',
-    //       imagePath: '/movie-search.jpg',
-    //       link: 'movie-search',
-    //     },
-    //     {
-    //       title: 'Image Search',
-    //       imagePath: '/image-search.jpg',
-    //       link: 'image-search',
-    //     },
-    //   ],
-    // },
+    {
+      images: [
+        {
+          title: 'Ip Adress Tracker',
+          imagePath: '/ip-adress-tracker.jpg',
+          link: 'ip-adress-tracker',
+        },
+      ],
+    },
   ],
 };
 
@@ -105,54 +90,103 @@ const ProjectsSlider = () => {
     >
       {projectSlides.slides.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
-            {slide.images.map((image, index) => (
-              <Link href={`/projects/${image.link}`} key={index}>
-                <div
-                  className="relative rounded-lg overflow-hidden flex items-center 
-                justify-center group"
-                >
+          {slide.images.length > 1 ? (
+            <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
+              {slide.images.map((image, index) => (
+                <Link href={`/projects/${image.link}`} key={index}>
                   <div
-                    className="flex items-center justify-center relative overflow-hidden 
-                group"
+                    className="relative rounded-lg overflow-hidden flex items-center 
+                justify-center group"
                   >
-                    {/* images */}
-                    <Image
-                      src={image.imagePath}
-                      width={500}
-                      height={300}
-                      alt={image.title}
-                    />
-                    {/* overlay gradient */}
                     <div
-                      className="absolute inset-0 bg-gradient-to-l from-transparent 
+                      className="flex items-center justify-center relative overflow-hidden 
+                group"
+                    >
+                      {/* images */}
+                      <Image
+                        src={image.imagePath}
+                        width={500}
+                        height={300}
+                        alt={image.title}
+                      />
+                      {/* overlay gradient */}
+                      <div
+                        className="absolute inset-0 bg-gradient-to-l from-transparent 
                   via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 
                   transition-all duration-700"
-                    ></div>
-                    {/* info description*/}
-                    <div
-                      className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 
+                      ></div>
+                      {/* info description*/}
+                      <div
+                        className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 
                   group-hover:xl:-translate-y-20 transition-all duration-300"
-                    >
-                      <div className="flex items-center gap-x-2">
-                        {/* title*/}
-                        <h3 className="text-lg sm:text-xl delay-100">
-                          {image.title}
-                        </h3>
-                        {/* icon */}
-                        <div
-                          className="text-xl translate-y-[500%] group-hover:translate-y-0 
+                      >
+                        <div className="flex items-center gap-x-2">
+                          {/* title*/}
+                          <h3 className="text-lg sm:text-xl delay-100">
+                            {image.title}
+                          </h3>
+                          {/* icon */}
+                          <div
+                            className="text-xl translate-y-[500%] group-hover:translate-y-0 
                       transition-all duration-300 delay-200"
-                        >
-                          <FaHandPointRight className="text-accent text-2xl sm:text-4xl" />
+                          >
+                            <FaHandPointRight className="text-accent text-4xl" />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="flex justify-center cursor-pointer mx-auto mt-10">
+              {slide.images.map((image, index) => (
+                <Link href={`/projects/${image.link}`} key={index}>
+                  <div
+                    className="relative rounded-lg overflow-hidden flex items-center 
+                justify-center group"
+                  >
+                    <div
+                      className="flex items-center justify-center relative overflow-hidden 
+                group"
+                    >
+                      {/* images */}
+                      <Image
+                        src={image.imagePath}
+                        width={600}
+                        height={400}
+                        alt={image.title}
+                      />
+                      {/* overlay gradient */}
+                      <div
+                        className="absolute inset-0 bg-gradient-to-l from-transparent 
+                  via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 
+                  transition-all duration-700"
+                      ></div>
+                      {/* info description*/}
+                      <div
+                        className="absolute bottom-0 translate-y-full group-hover:-translate-y-32 
+                        transition-all duration-300"
+                      >
+                        <div className="flex items-center gap-x-2">
+                          {/* title*/}
+                          <h3 className="text-2xl delay-100">{image.title}</h3>
+                          {/* icon */}
+                          <div
+                            className="text-xl translate-y-[500%] group-hover:translate-y-0 
+                      transition-all duration-300 delay-200"
+                          >
+                            <FaHandPointRight className="text-accent text-5xl" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </SwiperSlide>
       ))}
     </Swiper>
