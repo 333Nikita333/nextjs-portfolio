@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import { Circles } from '../../components';
-import { projectData } from './projectData';
 
 export async function getStaticPaths() {
-  const paths = projectData.map(project => ({
+  const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
+
+  const projects = await response.json();
+  console.log('getStaticPath, projects =>', projects);
+
+  const paths = projects.map(project => ({
     params: { id: project.id.toString() },
   }));
 
@@ -12,9 +16,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { id } = context.params;
-  // console.log('getStaticProps, id =>', id);
 
-  const project = projectData.find(project => project.id === id);
+  const response = await fetch(
+    `${process.env.NEXT_BASE_URL}/api/projects/${id}`,
+  );
+
+  const project = await response.json();
+  console.log('getStaticProps, project =>', project);
 
   if (!project) {
     return {
