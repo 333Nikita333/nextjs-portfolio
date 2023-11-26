@@ -5,7 +5,6 @@ export async function getStaticPaths() {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
   const projects = await response.json();
-  console.log('getStaticPath, projects =>', projects);
 
   const paths = projects.map(project => ({
     params: { id: project.id.toString() },
@@ -22,7 +21,6 @@ export async function getStaticProps(context) {
   );
 
   const project = await response.json();
-  console.log('getStaticProps, project =>', project);
 
   if (!project) {
     return {
@@ -38,7 +36,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Project({ project }) {
-  // console.log('project =>', project);
+  console.log('project =>', project);
   return (
     <div className="h-full bg-primary/30 py-32 flex items-center max-xl:overflow-y-auto">
       <Circles />
