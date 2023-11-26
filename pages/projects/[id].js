@@ -4,9 +4,17 @@ import { Circles } from '../../components';
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
+  if (!response.ok) {
+    console.error('Failed to fetch projects:', response.status, response.statusText);
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
+
   const projects = await response.json();
 
-  const paths = projects.map(project => ({
+  const paths = projects.map((project) => ({
     params: { id: project.id.toString() },
   }));
 
@@ -19,6 +27,13 @@ export async function getStaticProps(context) {
   const response = await fetch(
     `${process.env.NEXT_BASE_URL}/api/projects/${id}`,
   );
+
+  if (!response.ok) {
+    console.error(`Failed to fetch project with id ${id}:`, response.status, response.statusText);
+    return {
+      notFound: true,
+    };
+  }
 
   const project = await response.json();
 
