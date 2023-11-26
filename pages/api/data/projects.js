@@ -5,6 +5,10 @@ export const projects = [
     imagePath: '/lushwood-haven.jpg',
     projectName: 'Lushwood Haven',
     type: 'Solo Project',
+    links: [
+      { github: 'https://github.com/SerhiiMukhin/js-team10-project' },
+      { web: 'https://serhiimukhin.github.io/js-team10-project' },
+    ],
     description:
       '"Lushwood Haven App" is an application created to provide convenience and reliability in the process of booking rooms in a unique hotel located in a picturesque forest oasis. The combination of modern technology with natural seclusion creates the ideal place to relax.',
     features: [
@@ -86,8 +90,17 @@ export const projects = [
       'Footer section(frontend)',
       'Code refactoring(frontend)',
     ],
+    links: [
+      { github: 'https://github.com/IhorLeonov/project-Bra1n_Gain' },
+      { web: 'https://ihorleonov.github.io/project-Bra1n_Gain' },
+      { web: 'https://ihorleonov.github.io/project-Bra1n_Gain' },
+      {
+        figma:
+          'https://www.figma.com/file/gb1s67vWNoBYl1PY8VVhmF/Goose-Track-(Copy)?type=design&node-id=0%3A1&mode=design&t=DTBDRs13CYBC8LbI-1',
+      },
+    ],
     description:
-      'This is React application for time management, featuring a calendar, task management, statistics, user registration, feedback submission, and profile data management',
+      'This is Full Stack application for time management, featuring a calendar, task management, statistics, user registration, feedback submission, and profile data management',
     features: [
       {
         featureName: 'User Registration',
@@ -144,6 +157,10 @@ export const projects = [
     imagePath: '/phonebook-api.jpg',
     projectName: 'Phonebook API',
     type: 'Solo Project',
+    links: [
+      { github: 'https://github.com/333Nikita333/phonebook-api' },
+      { documentation: 'https://contacts-api-n3q6.onrender.com/api/docs' },
+    ],
     description:
       'Personal phone book backend based on MongoDB database that allows users to add, edit, delete and view their contacts. The application implements user registration and authentication. Authorized users can add, edit, delete and view their contacts',
     features: [
@@ -195,6 +212,21 @@ export const projects = [
     imagePath: '/image-publish-app.jpg',
     projectName: 'Image Publish App',
     type: 'Solo Project',
+    links: [
+      { github: 'https://github.com/333Nikita333/react-native-project' },
+      {
+        qrCode:
+          'https://expo.dev/%40mykyta_hilis/react-native-project?serviceType=eas&distribution=expo-go&scheme=exp%2Breact-native-project&channel=master&sdkVersion=47.0.0',
+      },
+      {
+        expoAppLink:
+          'exp://u.expo.dev/e100b86f-98aa-46ce-99e1-ab75266f53d5?channel-name=master&runtime-version=exposdk%3A47.0.0',
+      },
+      {
+        figma:
+          'https://www.figma.com/file/OxWLon7kLrdpgB9tiNp9xo/Homework-(Copy)?type=design&mode=design&t=DTBDRs13CYBC8LbI-1',
+      },
+    ],
     description:
       'Image Publish App is a mobile application that allows users to create posts and add descriptions based on images. Users can like the post, go to the comments section and view a map with a marker indicating the location where the photo was taken.',
     features: [
@@ -254,6 +286,11 @@ export const projects = [
     imagePath: '/phonebook.jpg',
     projectName: 'Phonebook',
     type: 'Solo Project',
+    links: [
+      { github: 'https://github.com/333Nikita333/phonebook' },
+      { web: 'https://333nikita333.github.io/phonebook' },
+      { documentation: 'https://connections-api.herokuapp.com/docs' },
+    ],
     description:
       'Phonebook is a React application for managing a private collection of contacts. It allows users to perform operations such as creating, deleting, and editing contacts',
     features: [
@@ -309,6 +346,11 @@ export const projects = [
     imagePath: '/ip-adress-tracker.jpg',
     projectName: 'IP Adress Tracker',
     type: 'Solo Project',
+    links: [
+      { github: 'https://github.com/333Nikita333/ip-address-tracker' },
+      { web: 'https://ip-address-tracker-bice-beta.vercel.app' },
+      { geolocateAPI: 'https://geo.ipify.org' },
+    ],
     description:
       'IP Adress Tracker project is a web application developed using React and Vite to get location information from an IP address. It allows the user to enter an IP address and get data such as location, time zone, and internet connection provider. In addition, the application also displays a map with a marker indicating the location based on the received data',
     features: [
@@ -363,6 +405,14 @@ export const projects = [
       'Adding common and reset styles',
       'Image optimization',
     ],
+    links: [
+      { github: 'https://github.com/SerhiiMukhin/js-team10-project' },
+      { web: 'https://serhiimukhin.github.io/js-team10-project' },
+      {
+        figma:
+          'https://www.figma.com/file/G9EWd1jV9ht4fYTDcj2pxi/Filmoteka-(Copy)?type=design&mode=design&t=DTBDRs13CYBC8LbI-1',
+      },
+    ],
     description:
       'Filmoteka is an application that provides a convenient way to manage your film collection, providing detailed information and the ability to save your favorite films',
     features: [
@@ -390,6 +440,7 @@ export const projects = [
       },
     ],
     technologies: [
+      'Parcel',
       'HTML5',
       'CSS3',
       'SASS',
@@ -414,6 +465,14 @@ export const projects = [
       'Organization of team work',
       'Layout of the "Producs" section',
       'Сode refactoring',
+    ],
+    links: [
+      { github: 'https://github.com/IhorLeonov/ice-cream_team-project' },
+      { web: 'https://ihorleonov.github.io/ice-cream_team-project' },
+      {
+        figma:
+          'https://www.figma.com/file/au48QkRLwRTwfZCQQb53Op/ice-cream-(Copy)?type=design&node-id=0%3A1&mode=design&t=DTBDRs13CYBC8LbI-1',
+      },
     ],
     description:
       'Ice Cream is a team project created using advanced web development technologies including HTML5, SASS, BEM and JavaScript. Our app provides a convenient and interactive way to order your favorite ice cream right from the comfort of your home.',
@@ -470,6 +529,14 @@ export const projects = [
     imagePath: '/web-studio.jpg',
     projectName: 'Web Studio',
     type: 'Solo Project',
+    links: [
+      { github: 'https://github.com/333Nikita333/Web-Studio' },
+      { web: 'https://333nikita333.github.io/Web-Studio' },
+      {
+        figma:
+          'https://www.figma.com/file/lMs2r2u1EmMZnn4Kd9HO3v/Web-Studio-(Version-2.1)-(Copy)?type=design&mode=design&t=DTBDRs13CYBC8LbI-1',
+      },
+    ],
     description:
       'This project is an adaptive HTML layout for three versions: mobile, tablet, and desktop, utilizing the SASS preprocessor and following the BEM methodology',
     features: [

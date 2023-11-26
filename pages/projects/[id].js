@@ -5,7 +5,11 @@ export async function getStaticPaths() {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
   if (!response.ok) {
-    console.error('Failed to fetch projects:', response.status, response.statusText);
+    console.error(
+      'Failed to fetch projects:',
+      response.status,
+      response.statusText,
+    );
     return {
       paths: [],
       fallback: false,
@@ -14,7 +18,7 @@ export async function getStaticPaths() {
 
   const projects = await response.json();
 
-  const paths = projects.map((project) => ({
+  const paths = projects.map(project => ({
     params: { id: project.id },
   }));
 
@@ -29,7 +33,13 @@ export async function getStaticProps(context) {
   );
 
   if (!response.ok) {
-    console.error(`Failed to fetch project with id ${id}:`, response.status, response.statusText);
+    console.error(
+      `Failed to fetch project with id ${id}:`,
+      'Status =>',
+      response.status,
+      'Status Text =>',
+      response.statusText,
+    );
     return {
       notFound: true,
     };
