@@ -15,7 +15,7 @@ export async function getStaticPaths() {
   const projects = await response.json();
 
   const paths = projects.map((project) => ({
-    params: { id: project.id.toString() },
+    params: { id: project.id },
   }));
 
   return { paths, fallback: false };
