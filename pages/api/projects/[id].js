@@ -1,10 +1,10 @@
-import { projects } from '../data/projects';
+import { projectsData } from '../data/projectsData';
 
 export default function handler(req, res) {
   const { id } = req.query;
 
   if (req.method === 'GET') {
-    const project = projects.find(project => project.id === id);
+    const project = projectsData.find(project => project.id === id);
 
     if (project) {
       res.status(200).json(project);
