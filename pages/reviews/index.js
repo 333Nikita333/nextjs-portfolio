@@ -16,7 +16,7 @@ const Reviews = () => {
             variants={fadeIn('down', 0.2)}
             className="h2 mb-8 xl:mb-0"
           >
-            What clients <span className="text-accent">say .</span>
+            What people <span className="text-accent">say .</span>
           </AnimatedText>
           {/* review slider */}
           <motion.div
