@@ -1,6 +1,5 @@
-import Head from 'next/head';
 import Link from 'next/link';
-import { Circles } from '../../components';
+import { Circles, Meta } from '../../components';
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
@@ -63,9 +62,8 @@ export default function Project({ project }) {
   console.log('project =>', project);
   return (
     <>
-      <Head>
-        <title>{project.projectName || 'My Project'}</title>
-      </Head>
+      <Meta title={project.projectName || 'My Project'} />
+
       <div className="h-full bg-primary/30 py-32 flex items-center max-xl:overflow-y-auto">
         <Circles />
         <div className="container mx-auto max-xl:mt-auto xl:mt-12">

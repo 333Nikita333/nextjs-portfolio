@@ -4,6 +4,7 @@ import Bulb from './Bulb';
 import Circles from './Circles';
 import Header from './Header';
 import Layout from './Layout';
+import Meta from './Meta';
 import Nav from './Nav';
 import ParticlesContainer from './ParticlesContainer';
 import ProjectsBtn from './ProjectsBtn';
@@ -22,6 +23,7 @@ export {
   Circles,
   Header,
   Layout,
+  Meta,
   Nav,
   ParticlesContainer,
   ProjectsBtn,

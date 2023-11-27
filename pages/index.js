@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import {
   AnimatedText,
   Avatar,
+  Meta,
   ParticlesContainer,
   ProjectsBtn,
 } from '../components';
@@ -9,89 +10,92 @@ import { fadeIn } from '../variants';
 
 const Home = () => {
   return (
-    <div className="bg-primary/60 h-full">
-      {/* text */}
-      <div
-        className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30
-      to-black/10"
-      >
+    <>
+      <Meta title="Mykyta Hilis" />
+      <div className="bg-primary/60 h-full">
+        {/* text */}
         <div
-          className="text-center flex flex-col justify-center xl:pt-40 xl:text-left 
-          h-full container mx-auto xl:ml-28"
+          className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30
+      to-black/10"
         >
-          {/* title */}
-          <AnimatedText
-            isTypingAnimate={true}
-            tag="h1"
-            variants={fadeIn('down', 0.2)}
-            sequence={[
-              'Every line of code -',
-              500,
-              'small step into the future',
-              2500,
-              'Innovation through',
-              500,
-              'technology and creativity',
-              2500,
-              'Ideas turn into code,',
-              500,
-              'and code into reality',
-              2500,
-            ]}
-            className="h1"
-          />
-          {/* subtitle */}
-          <AnimatedText
-            isTypingAnimate={false}
-            tag="p"
-            variants={fadeIn('down', 0.3)}
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-10 text-lg leading-relaxed"
+          <div
+            className="text-center flex flex-col justify-center xl:pt-40 xl:text-left 
+          h-full container mx-auto xl:ml-28"
           >
-            Hello there! My name is <span className="text-accent">Mykyta</span>{' '}
-            and I am a{' '}
-            <span className="text-accent">Junior Full Stack Developer</span>,
-            and welcome to my virtual world of code and creativity. Here, every
-            line is part of my story, and every project is an adventure. Ready
-            to explore? Let&apos;s start!
-          </AnimatedText>
-          {/* btn */}
-          <div className="flex justify-center xl:hidden relative">
-            <ProjectsBtn />
+            {/* title */}
+            <AnimatedText
+              isTypingAnimate={true}
+              tag="h1"
+              variants={fadeIn('down', 0.2)}
+              sequence={[
+                'Every line of code -',
+                500,
+                'small step into the future',
+                2500,
+                'Innovation through',
+                500,
+                'technology and creativity',
+                2500,
+                'Ideas turn into code,',
+                500,
+                'and code into reality',
+                2500,
+              ]}
+              className="h1"
+            />
+            {/* subtitle */}
+            <AnimatedText
+              isTypingAnimate={false}
+              tag="p"
+              variants={fadeIn('down', 0.3)}
+              className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-10 text-lg leading-relaxed"
+            >
+              Hello there! My name is{' '}
+              <span className="text-accent">Mykyta</span> and I am a{' '}
+              <span className="text-accent">Junior Full Stack Developer</span>,
+              and welcome to my virtual world of code and creativity. Here,
+              every line is part of my story, and every project is an adventure.
+              Ready to explore? Let&apos;s start!
+            </AnimatedText>
+            {/* btn */}
+            <div className="flex justify-center xl:hidden relative">
+              <ProjectsBtn />
+            </div>
+            <motion.div
+              variants={fadeIn('down', 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="hidden xl:flex"
+            >
+              <ProjectsBtn />
+            </motion.div>
           </div>
+        </div>
+        {/* image */}
+        <div className="w-[1200px] h-full absolute right-0 bottom-0 pointer-events-none">
+          {/* bg img */}
+          <div
+            className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right 
+          xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"
+          ></div>
+          {/* particles */}
+          <ParticlesContainer />
+          {/* avatar img */}
           <motion.div
-            variants={fadeIn('down', 0.4)}
+            variants={fadeIn('up', 0.5)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden xl:flex"
+            transition={{ duration: 1, ease: 'ease' }}
+            className="w-full h-full max-w-[500px] max-h-[500px] absolute -bottom-22
+          lg:-bottom-6 lg:right-0"
           >
-            <ProjectsBtn />
+            <Avatar />
           </motion.div>
         </div>
       </div>
-      {/* image */}
-      <div className="w-[1200px] h-full absolute right-0 bottom-0 pointer-events-none">
-        {/* bg img */}
-        <div
-          className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right 
-          xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"
-        ></div>
-        {/* particles */}
-        <ParticlesContainer />
-        {/* avatar img */}
-        <motion.div
-          variants={fadeIn('up', 0.5)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          transition={{ duration: 1, ease: 'ease' }}
-          className="w-full h-full max-w-[500px] max-h-[500px] absolute -bottom-22
-          lg:-bottom-6 lg:right-0"
-        >
-          <Avatar />
-        </motion.div>
-      </div>
-    </div>
+    </>
   );
 };
 
