@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { BsArrowRight } from 'react-icons/bs';
-import { Circles } from '../../components';
+import { AnimatedText, Circles } from '../../components';
 import { fadeIn } from '../../variants';
 
 const Contact = () => {
@@ -14,15 +14,14 @@ const Contact = () => {
         {/* text & form */}
         <div className="flex flex-col w-full max-w-[700px]">
           {/* text */}
-          <motion.h2
+          <AnimatedText
+            isTypingAnimate={false}
+            tag="h2"
             variants={fadeIn('down', 0.2)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
             className="h2 text-center mb-12 "
           >
             Let&apos;s <span className="text-accent">connect .</span>
-          </motion.h2>
+          </AnimatedText>
           {/* form */}
           <motion.form
             variants={fadeIn('up', 0.4)}

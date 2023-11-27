@@ -1,5 +1,4 @@
 import Image from 'next/image';
-
 import { FaServer, FaWrench } from 'react-icons/fa';
 import { RxArrowTopRight, RxDesktop, RxMobile } from 'react-icons/rx';
 import { Autoplay, FreeMode, Pagination } from 'swiper';

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { AnimatedTitle, Bulb, Circles, ProjectsSlider } from '../../components';
+import { AnimatedText, Bulb, Circles, ProjectsSlider } from '../../components';
 import { fadeIn } from '../../variants';
 
 const Projects = () => {
@@ -10,7 +10,8 @@ const Projects = () => {
         <div className="flex flex-col xl:flex-row gap-x-12">
           {/* text */}
           <div className="text-center flex xl:w-[30vw] flex-col xl:text-left mb-4 xl:mb-0">
-            <AnimatedTitle
+            <AnimatedText
+              isTypingAnimate={true}
               tag="h2"
               variants={fadeIn('up', 0.2)}
               sequence={[
@@ -21,13 +22,12 @@ const Projects = () => {
                 'My web collection',
                 2500,
               ]}
-              classNames="h2 xl:mt-12"
+              className="h2 xl:mt-12"
             />
-            <motion.p
+            <AnimatedText
+              isTypingAnimate={false}
+              tag="p"
               variants={fadeIn('up', 0.4)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
               className="mb-4 max-w-[400px] mx-auto xl:mx-0"
             >
               I present to you some of my works that reflect my passion for web
@@ -35,7 +35,7 @@ const Projects = () => {
               custom interfaces and mobile adaptations, each project represents
               a challenge and opportunity for creativity. Every line of code is
               a building block that I use, to build digital worlds.
-            </motion.p>
+            </AnimatedText>
           </div>
 
           {/* slider */}

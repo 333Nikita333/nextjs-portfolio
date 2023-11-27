@@ -14,7 +14,7 @@ const ProjectsBtn = () => {
           src={'/rounded-text.png'}
           width={141}
           height={148}
-          alt=""
+          alt="background image for the project button"
           className="animate-spin-slow w-full h-full max-w-[101px] max-h-[108px] xl:max-w-[122px] xl:max-h-[129px]"
         />
         <HiArrowRight

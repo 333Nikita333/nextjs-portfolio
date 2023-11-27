@@ -1,4 +1,4 @@
-import AnimatedTitle from './AnimatedTitle';
+import AnimatedText from './AnimatedText';
 import Avatar from './Avatar';
 import Bulb from './Bulb';
 import Circles from './Circles';
@@ -16,7 +16,7 @@ import TopLeftImg from './TopLeftImg';
 import Transition from './Transition';
 
 export {
-  AnimatedTitle,
+  AnimatedText,
   Avatar,
   Bulb,
   Circles,
@@ -31,6 +31,5 @@ export {
   Socials,
   TooltipContainer,
   TopLeftImg,
-  Transition
+  Transition,
 };
-

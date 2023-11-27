@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 import CountUp from 'react-countup';
-import { FaCss3, FaSass, FaDocker, FaHtml5, FaReact } from 'react-icons/fa';
+import { FaCss3, FaDocker, FaHtml5, FaReact, FaSass } from 'react-icons/fa';
 import {
   SiAxios,
   SiExpress,
@@ -21,7 +21,7 @@ import {
 } from 'react-icons/si';
 import { TbBrandReactNative, TbBrandVscode } from 'react-icons/tb';
 import {
-  AnimatedTitle,
+  AnimatedText,
   Avatar,
   Circles,
   TooltipContainer,
@@ -149,7 +149,8 @@ const About = () => {
       >
         {/* text */}
         <div className="flex-1 flex flex-col xl:ml-12 max-xl:mb-3 mt-28 md:mt-24 lg:mt-20 xl:mt-0">
-          <AnimatedTitle
+          <AnimatedText
+            isTypingAnimate={true}
             tag="h2"
             variants={fadeIn('right', 0.2)}
             sequence={[
@@ -160,13 +161,12 @@ const About = () => {
               'The story of my web journey',
               2500,
             ]}
-            classNames="h2"
+            className="h2"
           />
-          <motion.p
+          <AnimatedText
+            isTypingAnimate={false}
+            tag="p"
             variants={fadeIn('right', 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
             className="max-w-[500px] mx-auto xl:mx-0 mb-2 xl:mb-3 px-2 xl:px-0"
           >
             My journey began with a dream of creating something amazing in the
@@ -174,7 +174,7 @@ const About = () => {
             adding new colors and shapes to every project I create. My work
             experience and my achievements are part of this story, but the most
             important thing for me is the constant desire to learn and grow.
-          </motion.p>
+          </AnimatedText>
           {/* counters */}
           <motion.div
             variants={fadeIn('right', 0.6)}
@@ -266,4 +266,5 @@ const About = () => {
     </div>
   );
 };
+
 export default About;

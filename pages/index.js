@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import {
-  AnimatedTitle,
+  AnimatedText,
   Avatar,
   ParticlesContainer,
   ProjectsBtn,
@@ -13,14 +13,15 @@ const Home = () => {
       {/* text */}
       <div
         className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30
-     to-black/10"
+      to-black/10"
       >
         <div
           className="text-center flex flex-col justify-center xl:pt-40 xl:text-left 
-        h-full container mx-auto xl:ml-28"
+          h-full container mx-auto xl:ml-28"
         >
           {/* title */}
-          <AnimatedTitle
+          <AnimatedText
+            isTypingAnimate={true}
             tag="h1"
             variants={fadeIn('down', 0.2)}
             sequence={[
@@ -37,14 +38,13 @@ const Home = () => {
               'and code into reality',
               2500,
             ]}
-            classNames="h1"
+            className="h1"
           />
           {/* subtitle */}
-          <motion.p
+          <AnimatedText
+            isTypingAnimate={false}
+            tag="p"
             variants={fadeIn('down', 0.3)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-10 text-lg leading-relaxed"
           >
             Hello there! My name is <span className="text-accent">Mykyta</span>{' '}
@@ -53,7 +53,7 @@ const Home = () => {
             and welcome to my virtual world of code and creativity. Here, every
             line is part of my story, and every project is an adventure. Ready
             to explore? Let&apos;s start!
-          </motion.p>
+          </AnimatedText>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
@@ -74,7 +74,7 @@ const Home = () => {
         {/* bg img */}
         <div
           className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right 
-        xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"
+          xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"
         ></div>
         {/* particles */}
         <ParticlesContainer />
@@ -86,7 +86,7 @@ const Home = () => {
           exit="hidden"
           transition={{ duration: 1, ease: 'ease' }}
           className="w-full h-full max-w-[500px] max-h-[500px] absolute -bottom-22
-        lg:-bottom-6 lg:right-0"
+          lg:-bottom-6 lg:right-0"
         >
           <Avatar />
         </motion.div>
