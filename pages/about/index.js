@@ -13,6 +13,7 @@ import {
   SiMongoose,
   SiNextdotjs,
   SiPostman,
+  SiReactquery,
   SiSwagger,
   SiTailwindcss,
   SiTypescript,
@@ -45,6 +46,7 @@ export const aboutData = [
           <SiTailwindcss title="TailwindCSS" key="TailwindCSS" />,
           <SiNextdotjs title="Next" key="Next" />,
           <SiAxios title="Axios" key="Axios" />,
+          <SiReactquery title="React Query" key="React Query" />,
         ],
       },
       {
@@ -112,11 +114,11 @@ export const counters = [
     text: 'Years of expirience',
   },
   {
-    end: 750,
+    end: 780,
     text: 'Hours of coding',
   },
   {
-    end: 7,
+    end: 6,
     text: 'Solo projects',
   },
   {

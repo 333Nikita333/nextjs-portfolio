@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaHandPointRight } from 'react-icons/fa';
-import { Autoplay, FreeMode, Navigation, Pagination } from 'swiper';
+import { FreeMode, Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -75,17 +75,13 @@ const ProjectsSlider = () => {
     <Swiper
       spaceBetween={15}
       freeMode={true}
-      autoplay={{
-        delay: 4000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      }}
+      navigation={true}
+      loop={true}
       pagination={{
         clickable: true,
       }}
       scrollbar={{ draggable: true }}
-      navigation
-      modules={[Autoplay, FreeMode, Pagination, Navigation]}
+      modules={[FreeMode, Pagination, Navigation]}
       className="h-[380px] sm:h-[530px]"
     >
       {projectSlides.slides.map((slide, index) => (
@@ -108,6 +104,7 @@ const ProjectsSlider = () => {
                         width={500}
                         height={300}
                         alt={image.title}
+                        className="group-hover:scale-110 transition-all duration-700"
                       />
                       {/* overlay gradient */}
                       <div
