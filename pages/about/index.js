@@ -133,7 +133,11 @@ const About = () => {
 
   return (
     <>
-      <Meta title="About" />
+      <Meta
+        title="About"
+        description="Learn about Mykyta's journey in web development. Skills in front-end and back-end technologies. Education, experience, and certifications."
+        robots="index, follow"
+      />
 
       <div className="h-full bg-primary/30 text-center xl:text-left">
         <Circles />

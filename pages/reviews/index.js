@@ -5,7 +5,11 @@ import { fadeIn } from '../../variants';
 const Reviews = () => {
   return (
     <>
-      <Meta title="Reviews" />
+      <Meta
+        title="Reviews"
+        description="Read what people are saying about Mykyta Hilis' web development services. Discover the experiences of clients and partners."
+        robots="index, follow"
+      />
 
       <div className="h-full bg-primary/30 py-32 text-center">
         <div className="container mx-auto h-full flex flex-col justify-center">

@@ -6,7 +6,11 @@ import { fadeIn } from '../../variants';
 const Contact = () => {
   return (
     <>
-      <Meta title="Contact" />
+      <Meta
+        title="Contact"
+        description="Connect with Mykyta for web development projects. Fill out the form and let's discuss your ideas and requirements."
+        robots="index, nofollow"
+      />
 
       <div className="h-full bg-primary/30">
         <Circles />

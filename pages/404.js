@@ -4,7 +4,11 @@ import { Meta } from '../components';
 const NotFound = () => {
   return (
     <>
-      <Meta title="404 - Page not found" />
+      <Meta
+        title="404 - Page not found"
+        description="The requested page is not found. Explore Mykyta's portfolio or return to the homepage."
+        robots="noindex, nofollow"
+      />
 
       <div className="h-full bg-primary/30 text-center flex flex-col items-center justify-center">
         <h1 className="text-6xl font-bold text-accent mb-4">404</h1>

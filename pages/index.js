@@ -11,7 +11,12 @@ import { fadeIn } from '../variants';
 const Home = () => {
   return (
     <>
-      <Meta title="Mykyta Hilis" />
+      <Meta
+        title="Mykyta Hilis"
+        description="Explore Mykyta's web development and design projects. From websites to web applications, each project is a blend of technology and creativity"
+        robots="index, follow"
+      />
+
       <div className="bg-primary/60 h-full">
         {/* text */}
         <div

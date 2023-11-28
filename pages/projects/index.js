@@ -11,7 +11,11 @@ import { fadeIn } from '../../variants';
 const Projects = () => {
   return (
     <>
-      <Meta title="Projects" />
+      <Meta
+        title="Projects"
+        description="Explore Mykyta's web development projects. From design to implementation, each project is a showcase of creativity and coding skills."
+        robots="index, follow"
+      />
 
       <div className="h-full bg-primary/30 py-28 flex items-center max-xl:overflow-y-auto">
         <Circles />

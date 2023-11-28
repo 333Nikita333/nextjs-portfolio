@@ -62,7 +62,11 @@ export default function Project({ project }) {
   console.log('project =>', project);
   return (
     <>
-      <Meta title={project.projectName || 'My Project'} />
+      <Meta
+        title={project.projectName || 'My Project'}
+        description={project.description || "One of Mykyta Hilis' projects"}
+        robots="index, follow"
+      />
 
       <div className="h-full bg-primary/30 py-32 flex items-center max-xl:overflow-y-auto">
         <Circles />
