@@ -97,7 +97,7 @@ const ReviewSlider = () => {
       }}
       loop={true}
       modules={[Navigation, Pagination]}
-      className="h-[500px]"
+      className="h-[430px]"
     >
       {reviewData.map((review, index) => (
         <SwiperSlide key={index}>
