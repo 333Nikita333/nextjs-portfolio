@@ -86,7 +86,7 @@ const reviewData = [
       'It was a pleasant experience collaborating on a project with you! I really appreciate your professional approach as a developer and commitment to tasks as a Scrum Master.',
   },
   {
-    image: '/review-Mykola-Zanko',
+    image: '/review-Mykola-Zanko.png',
     name: 'Mykola Zanko',
     position: 'Front-end developer',
     links: [
