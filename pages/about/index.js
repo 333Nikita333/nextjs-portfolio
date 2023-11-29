@@ -115,7 +115,7 @@ export const counters = [
     text: 'Years of expirience',
   },
   {
-    end: 780,
+    end: 830,
     text: 'Hours of coding',
   },
   {

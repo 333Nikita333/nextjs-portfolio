@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaQuoteLeft, FaTelegram } from 'react-icons/fa';
-import { CgMail } from 'react-icons/cg';
 import { MdMail } from 'react-icons/md';
 import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
@@ -84,7 +83,32 @@ const reviewData = [
       },
     ],
     message:
-      'It was a pleasant experience collaborating on a project with you! I really appreciate your professional approach as a developer and commitment to tasks as a Scrum Master',
+      'It was a pleasant experience collaborating on a project with you! I really appreciate your professional approach as a developer and commitment to tasks as a Scrum Master.',
+  },
+  {
+    image: '/review-Mykola-Zanko',
+    name: 'Mykola Zanko',
+    position: 'Front-end developer',
+    links: [
+      {
+        icon: <FaGithub />,
+        path: 'https://github.com/Pumpon4yk',
+      },
+      {
+        icon: <FaLinkedin />,
+        path: 'https://www.linkedin.com/in/mykola-zanko',
+      },
+      {
+        icon: <FaTelegram />,
+        path: 'https://t.me/pumpon4yk',
+      },
+      {
+        icon: <MdMail />,
+        path: 'mailto:tt10392@gmail.com',
+      },
+    ],
+    message:
+      'I worked with Mykyta on 2 projects, he held the position of scrum master, organized meetings, the task board, made sure that each developer had a job and helped team members if needed, plus he had his own tasks as a developer, developed project presentations, in general, he was excellent showed work in a team and as a specialist in his field.',
   },
 ];
 
