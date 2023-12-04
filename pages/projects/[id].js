@@ -61,7 +61,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Project({ project }) {
-  // console.log('project =>', project);
+  console.log('project =>', project);
   return (
     <>
       <Meta
