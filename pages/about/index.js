@@ -155,7 +155,7 @@ const About = () => {
         </motion.div>
         <div
           className="container mx-auto h-full flex flex-col items-center xl:flex-row 
-      gap-x-6 max-sm:overflow-y-auto"
+          gap-x-6 max-sm:overflow-y-auto"
         >
           {/* text */}
           <div className="flex-1 flex flex-col xl:ml-12 max-xl:mb-3 mt-28 md:mt-24 lg:mt-20 xl:mt-0">
