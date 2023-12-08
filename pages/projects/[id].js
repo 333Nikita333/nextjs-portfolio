@@ -210,9 +210,9 @@ export default function Project({ project }) {
         <Circles />
 
         {/* all project content */}
-        <div className="flex mb-auto gap-10 mx-24 w-full">
+        <div className="flex max-lg:flex-col mb-auto lg:gap-10 mx-5 lg:mx-24 w-full">
           {/* left content */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col max-lg:items-center gap-3">
             <Link href={'/projects'}>Go back</Link>
 
             {/* project image */}
@@ -221,17 +221,17 @@ export default function Project({ project }) {
               width={500}
               height={500}
               alt="project image"
-              className="max-w-none"
+              className="rounded-3xl sm:max-w-none"
             />
             {/* project title */}
-            <h2 className="text-4xl font-bold mb-4">{project.projectName}</h2>
+            <h2 className="text-4xl font-bold">{project.projectName}</h2>
 
             {/* project type */}
-            <p className="text-xl text-white mb-4">Type: {project.type}</p>
+            <p className="text-xl text-white">Type: {project.type}</p>
           </div>
 
           {/* right content */}
-          <div className="mt-7">
+          <div className="mt-3 lg:mt-7">
             {/* project tabs title */}
             <ul className="flex flex-wrap gap-x-5 gap-y-3 mb-4">
               {tabs.map((tab, tabIndex) => (
@@ -252,7 +252,9 @@ export default function Project({ project }) {
             </ul>
 
             {/* project tabs content */}
-            <div className='border-2 border-white rounded-2xl p-5'>{tabs[index].content}</div>
+            <div className="border-2 border-white rounded-2xl p-5">
+              {tabs[index].content}
+            </div>
           </div>
         </div>
       </div>
