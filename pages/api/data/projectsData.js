@@ -349,7 +349,9 @@ export const projectsData = [
             href="https://connections-api.herokuapp.com/docs"
             target="_blank"
             rel="noreferrer nofollow noopener"
-          >link</a>
+          >
+            link
+          </a>
         )}`,
       },
       {
@@ -508,6 +510,7 @@ export const projectsData = [
         'Notiflix',
         'Tui-pagination',
       ],
+      backtend: null,
     },
   },
   // 2-Ice Cream
@@ -581,6 +584,7 @@ export const projectsData = [
         'Animate.css',
         'Modern-normalize',
       ],
+      backtend: null,
     },
   },
   // 1-Web Studio
