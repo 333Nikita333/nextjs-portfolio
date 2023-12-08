@@ -141,7 +141,8 @@ export default function Project({ project }) {
         <ul className="flex flex-wrap gap-10">
           {['frontend', 'backend'].map(techType => (
             <li key={techType}>
-              {project?.technologies?.[techType] &&
+              {project.technologies &&
+                project.technologies[techType] &&
                 project.technologies[techType].length > 0 && (
                   <>
                     <p>{techType[0].toUpperCase() + techType.slice(1)}:</p>
