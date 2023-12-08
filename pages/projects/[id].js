@@ -70,7 +70,7 @@ export default function Project({ project }) {
     // description
     {
       title: 'Description',
-      content: <p className="text-white-700 mb-8">{project.description}</p>,
+      content: <p className="text-white-700">{project.description}</p>,
     },
     // links
     {
@@ -141,7 +141,7 @@ export default function Project({ project }) {
         <div className="flex flex-wrap gap-10">
           {['frontend', 'backend'].map(techType => (
             <div key={techType}>
-              <p>{techType[0].toUpperCase() + techType.slice(1)}</p>
+              <p>{techType[0].toUpperCase() + techType.slice(1)}:</p>
               <ul className="flex flex-wrap gap-y-2 gap-x-1">
                 {project.technologies[techType] &&
                   project.technologies[techType].length > 0 &&
@@ -177,24 +177,25 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: (
+      content: project.responsibilities && (
         <div>
-          {project.responsiblities && (
-            <>
-              <p className="text-white-700">{project.responsibilities.role}</p>
-              <ul className="list-disc">
-                {project.responsibilities.list.map((responsibility, index) => (
-                  <li key={index} className="mb-2">
-                    {responsibility}
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
+          <p className="text-white-700">{project.responsibilities.role}</p>
+          <ul className="list-disc">
+            {project.responsibilities.list.map((responsibility, index) => (
+              <li key={index} className="mb-2">
+                {responsibility}
+              </li>
+            ))}
+          </ul>
         </div>
       ),
     },
-  ];
+  ].filter(tab => {
+    return (
+      tab.title !== 'Responsibilities' ||
+      (project.responsibilities && project.responsibilities.list)
+    );
+  });
 
   return (
     <>
@@ -229,29 +230,28 @@ export default function Project({ project }) {
           </div>
 
           {/* right content */}
-          {/* project tabs content */}
           <div className="mt-7">
             {/* project tabs title */}
-            <ul className="flex flex-wrap gap-x-4 xl:gap-x-8 mb-4">
-              {tabs.map(
-                (tab, tabIndex) =>
-                  project[tab.title.toLowerCase()] && (
-                    <li
-                      key={tabIndex}
-                      className={`${
-                        index === tabIndex
-                          ? 'text-accent font-bold'
-                          : 'text-white'
-                      } cursor-pointer capitalize`}
-                      onClick={() => setIndex(tabIndex)}
-                    >
-                      {tab.title}
-                    </li>
-                  ),
-              )}
+            <ul className="flex flex-wrap gap-x-5 gap-y-3 mb-4">
+              {tabs.map((tab, tabIndex) => (
+                <li
+                  key={tabIndex}
+                  className={`${
+                    index === tabIndex ? 'text-accent' : ''
+                  } cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:absolute after:-bottom-1 after:left-0 ${
+                    index === tabIndex
+                      ? 'after:bg-accent after:w-[100%] after:transition-all after:duration-300'
+                      : 'after:bg-white'
+                  }`}
+                  onClick={() => setIndex(tabIndex)}
+                >
+                  {tab.title}
+                </li>
+              ))}
             </ul>
 
-            {tabs[index].content}
+            {/* project tabs content */}
+            <div className='border-2 border-white rounded-2xl p-5'>{tabs[index].content}</div>
           </div>
         </div>
       </div>

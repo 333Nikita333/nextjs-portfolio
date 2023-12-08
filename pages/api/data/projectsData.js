@@ -449,14 +449,16 @@ export const projectsData = [
     imagePath: '/filmoteka.jpg',
     projectName: 'Filmoteka',
     type: 'Team Project',
-    role: 'SCRUM Master',
-    responsibilities: [
-      'Organization of team work',
-      'Code refactoring',
-      'Scroll up button',
-      'Adding common and reset styles',
-      'Image optimization',
-    ],
+    responsibilities: {
+      role: 'SCRUM Master',
+      list: [
+        'Organization of team work',
+        'Code refactoring',
+        'Scroll up button',
+        'Adding common and reset styles',
+        'Image optimization',
+      ],
+    },
     links: [
       { github: 'https://github.com/SerhiiMukhin/js-team10-project' },
       { web: 'https://serhiimukhin.github.io/js-team10-project' },
@@ -514,12 +516,14 @@ export const projectsData = [
     imagePath: '/ice-cream.jpg',
     projectName: 'Ice Cream',
     type: 'Team Project',
-    role: 'SCRUM Master',
-    responsibilities: [
-      'Organization of team work',
-      'Layout of the "Producs" section',
-      'Сode refactoring',
-    ],
+    responsibilities: {
+      role: 'SCRUM Master',
+      list: [
+        'Organization of team work',
+        'Layout of the "Producs" section',
+        'Сode refactoring',
+      ],
+    },
     links: [
       { github: 'https://github.com/IhorLeonov/ice-cream_team-project' },
       { web: 'https://ihorleonov.github.io/ice-cream_team-project' },

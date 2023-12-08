@@ -264,7 +264,6 @@ const About = () => {
                           position={'right-[150%]'}
                           content={icon.key}
                         />
-
                         {icon}
                       </div>
                     ))}
