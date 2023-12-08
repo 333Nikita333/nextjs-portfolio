@@ -349,7 +349,7 @@ export const projectsData = [
             href="https://connections-api.herokuapp.com/docs"
             target="_blank"
             rel="noreferrer nofollow noopener"
-          ></a>
+          >link</a>
         )}`,
       },
       {
