@@ -135,39 +135,39 @@ export default function Project({ project }) {
       ),
     },
     // technologies
-    {
-      title: 'Technologies',
-      content: (
-        <ul className="flex flex-wrap gap-10">
-          {['frontend', 'backend'].map(techType => (
-            <li key={techType}>
-              {project.technologies &&
-              project.technologies[techType] &&
-              Array.isArray(project.technologies[techType]) &&
-              project.technologies[techType].length > 0 ? (
-                <>
-                  <p>{techType[0].toUpperCase() + techType.slice(1)}:</p>
-                  <ul className="flex flex-wrap gap-y-2 gap-x-1">
-                    {project.technologies[techType]
-                      .sort()
-                      .map((tech, index) => (
-                        <li key={index}>
-                          <span
-                            key={index}
-                            className="bg-gray-300 text-gray-800 rounded-full px-3 py-1 text-sm mr-2 mb-2"
-                          >
-                            {tech}
-                          </span>
-                        </li>
-                      ))}
-                  </ul>
-                </>
-              ) : null}
-            </li>
-          ))}
-        </ul>
-      ),
-    },
+    // {
+    //   title: 'Technologies',
+    //   content: (
+    //     <ul className="flex flex-wrap gap-10">
+    //       {['frontend', 'backend'].map(techType => (
+    //         <li key={techType}>
+    //           {project.technologies &&
+    //           project.technologies[techType] &&
+    //           Array.isArray(project.technologies[techType]) &&
+    //           project.technologies[techType].length > 0 ? (
+    //             <>
+    //               <p>{techType[0].toUpperCase() + techType.slice(1)}:</p>
+    //               <ul className="flex flex-wrap gap-y-2 gap-x-1">
+    //                 {project.technologies[techType]
+    //                   .sort()
+    //                   .map((tech, index) => (
+    //                     <li key={index}>
+    //                       <span
+    //                         key={index}
+    //                         className="bg-gray-300 text-gray-800 rounded-full px-3 py-1 text-sm mr-2 mb-2"
+    //                       >
+    //                         {tech}
+    //                       </span>
+    //                     </li>
+    //                   ))}
+    //               </ul>
+    //             </>
+    //           ) : null}
+    //         </li>
+    //       ))}
+    //     </ul>
+    //   ),
+    // },
     // features
     {
       title: 'Features',
