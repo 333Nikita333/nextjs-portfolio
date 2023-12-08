@@ -137,7 +137,7 @@ export default function Project({ project }) {
     // technologies
     {
       title: 'Technologies',
-      content: (
+      content: project.technologies ? (
         <ul className="flex flex-wrap gap-10">
           {Object.keys(project.technologies).map(techType => (
             <li key={techType}>
@@ -160,7 +160,7 @@ export default function Project({ project }) {
             </li>
           ))}
         </ul>
-      ),
+      ) : null,
     },
     // features
     {
@@ -178,7 +178,7 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: project.responsibilities && (
+      content: project.responsibilities ? (
         <div>
           <p className="text-white-700">{project.responsibilities.role}</p>
           <ul className="list-disc">
@@ -189,17 +189,12 @@ export default function Project({ project }) {
             ))}
           </ul>
         </div>
-      ),
+      ) : null,
     },
   ].filter(tab => {
     return (
       tab.title !== 'Responsibilities' ||
-      (project.responsibilities &&
-        project.responsibilities.list &&
-        (tab.title !== 'Technologies' ||
-          (project.technologies &&
-            ((tab.title === 'Technologies' && project.technologies.frontend) ||
-              (tab.title === 'Technologies' && project.technologies.backend)))))
+      (project.responsibilities && project.responsibilities.list)
     );
   });
 
