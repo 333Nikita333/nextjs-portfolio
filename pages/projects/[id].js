@@ -139,14 +139,18 @@ export default function Project({ project }) {
       title: 'Technologies',
       content: (
         <ul className="flex flex-wrap gap-10">
-          {Object.entries(project.technologies || {}).map(
-            ([techType, techList]) => (
-              <li key={techType}>
-                {techList && techList.length > 0 && (
-                  <>
-                    <p>{techType[0].toUpperCase() + techType.slice(1)}:</p>
-                    <ul className="flex flex-wrap gap-y-2 gap-x-1">
-                      {techList.sort().map((tech, index) => (
+          {['frontend', 'backend'].map(techType => (
+            <li key={techType}>
+              {project.technologies &&
+              project.technologies[techType] &&
+              Array.isArray(project.technologies[techType]) &&
+              project.technologies[techType].length > 0 ? (
+                <>
+                  <p>{techType[0].toUpperCase() + techType.slice(1)}:</p>
+                  <ul className="flex flex-wrap gap-y-2 gap-x-1">
+                    {project.technologies[techType]
+                      .sort()
+                      .map((tech, index) => (
                         <li key={index}>
                           <span
                             key={index}
@@ -156,12 +160,11 @@ export default function Project({ project }) {
                           </span>
                         </li>
                       ))}
-                    </ul>
-                  </>
-                )}
-              </li>
-            ),
-          )}
+                  </ul>
+                </>
+              ) : null}
+            </li>
+          ))}
         </ul>
       ),
     },
