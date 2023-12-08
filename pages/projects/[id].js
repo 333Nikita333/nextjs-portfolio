@@ -138,9 +138,9 @@ export default function Project({ project }) {
     {
       title: 'Technologies',
       content: (
-        <div className="flex flex-wrap gap-10">
-          {['frontend', 'backend'].map(techType => (
-            <div key={techType}>
+        <ul className="flex flex-wrap gap-10">
+          {Object.keys(project.technologies).map(techType => (
+            <li key={techType}>
               <p>{techType[0].toUpperCase() + techType.slice(1)}:</p>
               <ul className="flex flex-wrap gap-y-2 gap-x-1">
                 {project.technologies[techType] &&
@@ -156,11 +156,12 @@ export default function Project({ project }) {
                     </li>
                   ))}
               </ul>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       ),
     },
+
     // features
     {
       title: 'Features',
