@@ -194,7 +194,12 @@ export default function Project({ project }) {
   ].filter(tab => {
     return (
       tab.title !== 'Responsibilities' ||
-      (project.responsibilities && project.responsibilities.list)
+      (project.responsibilities &&
+        project.responsibilities.list &&
+        (tab.title !== 'Technologies' ||
+          (project.technologies &&
+            ((tab.title === 'Technologies' && project.technologies.frontend) ||
+              (tab.title === 'Technologies' && project.technologies.backend)))))
     );
   });
 
