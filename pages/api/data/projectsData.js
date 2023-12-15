@@ -344,13 +344,7 @@ export const projectsData = [
     features: [
       {
         featureName: 'Backend',
-        featureDesc: `The application uses its own backend and database - ${(
-          <a
-            href="https://connections-api.herokuapp.com/docs"
-            target="_blank"
-            rel="noreferrer nofollow noopener"
-          >link</a>
-        )}`,
+        featureDesc: 'The application uses its own backend and database',
       },
       {
         featureName: 'Authorization',

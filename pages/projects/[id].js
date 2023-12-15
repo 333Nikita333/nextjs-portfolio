@@ -1,8 +1,45 @@
-import Link from 'next/link';
-import { Circles, Meta } from '../../components';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
+import { FaFigma, FaGithub, FaLink, FaQrcode } from 'react-icons/fa';
+import { SiExpo, SiSwagger } from 'react-icons/si';
+import { TbApi } from 'react-icons/tb';
+import { Circles, Meta } from '../../components';
 
+const links = [
+  {
+    name: 'github',
+    icon: <FaGithub size={25} />,
+  },
+  {
+    name: 'backendGithub',
+    icon: <FaGithub size={25} />,
+  },
+  {
+    name: 'web',
+    icon: <FaLink size={25} />,
+  },
+  {
+    name: 'documentation',
+    icon: <SiSwagger size={25} />,
+  },
+  {
+    name: 'qrCode',
+    icon: <FaQrcode size={25} />,
+  },
+  {
+    name: 'expoAppLink',
+    icon: <SiExpo size={25} />,
+  },
+  {
+    name: 'figma',
+    icon: <FaFigma size={25} />,
+  },
+  {
+    name: 'geolocateAPI',
+    icon: <TbApi className="border border-blue-500 rounded-full" size={25} />,
+  },
+];
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
@@ -65,7 +102,7 @@ export default function Project({ project }) {
   console.log('project =>', project);
 
   const [index, setIndex] = useState(0);
-
+  console.log(project.links.map(obj => Object.keys(obj)[0]));
   const tabs = [
     // description
     {
@@ -79,56 +116,23 @@ export default function Project({ project }) {
         <ul className="flex gap-5 flex-wrap">
           {project.links.map((link, index) => (
             <li key={index}>
-              {link.github && (
-                <a
-                  href={link.github}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="text-blue-500 hover:underline"
-                >
-                  Frontend GitHub
-                </a>
-              )}
-              {link.web && (
-                <a
-                  href={link.web}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="text-blue-500 hover:underline"
-                >
-                  Website
-                </a>
-              )}
-              {link.backendGithub && (
-                <a
-                  href={link.backendGithub}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="text-blue-500 hover:underline"
-                >
-                  Backend GitHub
-                </a>
-              )}
-              {link.documentation && (
-                <a
-                  href={link.documentation}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="text-blue-500 hover:underline"
-                >
-                  Documentation
-                </a>
-              )}
-              {link.figma && (
-                <a
-                  href={link.figma}
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="text-blue-500 hover:underline"
-                >
-                  Figma
-                </a>
-              )}
+              {Object.keys(link).map((key, subIndex) => {
+                const linkIcon = links.find(l => l.name === key)?.icon;
+                const linkName = key.charAt(0).toUpperCase() + key.slice(1);
+
+                return (
+                  <a
+                    key={subIndex}
+                    href={link[key]}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className=" flex items-center gap-1 text-blue-500 hover:underline hover:scale-110 transition-all duration-300"
+                  >
+                    {linkIcon}
+                    {linkName}
+                  </a>
+                );
+              })}
             </li>
           ))}
         </ul>
