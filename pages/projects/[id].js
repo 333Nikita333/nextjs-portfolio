@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { BsArrowLeftSquare } from 'react-icons/bs';
 import { FaFigma, FaGithub, FaLink, FaQrcode } from 'react-icons/fa';
 import { SiExpo, SiSwagger } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
@@ -226,9 +227,15 @@ export default function Project({ project }) {
 
         {/* all project content */}
         <div className="flex max-lg:flex-col mb-auto lg:gap-10 mx-5 lg:mx-24 w-full">
+            <Link
+              className="fixed top-[15%] lg:top-[12vh] left-1/2 translate-x-[-50%] lg:left-[15%]  flex justify-center items-center gap-2 uppercase 
+              border-none rounded-lg hover:text-accent hover:scale-110 transition-all duration-300"
+              href={'/projects'}
+            >
+              <BsArrowLeftSquare size={25} /> Go back
+            </Link>
           {/* left content */}
-          <div className="flex flex-col max-lg:items-center gap-3">
-            <Link href={'/projects'}>Go back</Link>
+          <div className="flex flex-col max-lg:mt-10 max-lg:items-center gap-3">
 
             {/* project image */}
             <Image
