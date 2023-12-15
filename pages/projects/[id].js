@@ -228,7 +228,7 @@ export default function Project({ project }) {
         {/* all project content */}
         <div className="flex max-lg:flex-col mb-auto lg:gap-10 mx-5 lg:mx-24 w-full">
             <Link
-              className="fixed top-[15%] lg:top-[12vh] left-1/2 translate-x-[-50%] lg:left-[15%]  flex justify-center items-center gap-2 uppercase 
+              className="z-31 fixed top-[130px] lg:top-[12vh] left-1/2 translate-x-[-50%] lg:left-[15%]  flex justify-center items-center gap-2 uppercase 
               border-none rounded-lg hover:text-accent hover:scale-110 transition-all duration-300"
               href={'/projects'}
             >
