@@ -103,7 +103,7 @@ export default function Project({ project }) {
   console.log('project =>', project);
 
   const [index, setIndex] = useState(0);
-  console.log(project.links.map(obj => Object.keys(obj)[0]));
+  
   const tabs = [
     // description
     {
