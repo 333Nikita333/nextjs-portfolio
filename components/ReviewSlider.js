@@ -108,7 +108,7 @@ const reviewData = [
       },
     ],
     message:
-      'I worked with Mykyta on 2 projects, he held the position of scrum master, organized meetings, the task board, made sure that each developer had a job and helped team members if needed, plus he had his own tasks as a developer, developed project presentations, in general, he was excellent showed work in a team and as a specialist in his field.',
+      'I worked with Mykyta on 2 projects, he held the position of Scrum Master, organized meetings, the task board, made sure that each developer had a job and helped team members if needed, plus he had his own tasks as a developer, developed project presentations, in general, he was excellent showed work in a team and as a specialist in his field.',
   },
 ];
 
