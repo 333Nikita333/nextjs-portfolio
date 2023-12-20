@@ -20,7 +20,6 @@ const Contact = () => {
       ...prevData,
       [name]: value,
     }));
-    console.log(formData)
   };
 
   const handleSubmit = async e => {
@@ -38,7 +37,6 @@ const Contact = () => {
       const result = await response.json();
       if (result.success) {
         console.log('Message sent successfully!');
-        // Очистите форму после успешной отправки, если это необходимо
         setFormData({
           name: '',
           email: '',
