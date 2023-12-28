@@ -41,7 +41,8 @@ const links = [
     icon: <TbApi className="border border-blue-500 rounded-full" size={25} />,
   },
 ];
-export async function getStaticPaths({ locales }) {
+
+export async function getStaticPaths() {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
   if (!response.ok) {
@@ -57,24 +58,23 @@ export async function getStaticPaths({ locales }) {
   }
 
   const projects = await response.json();
+  const locales = ['en', 'uk'];
 
-  const paths = projects.map(
-    project => (
-      {
-        params: { id: project.id },
-        locale: 'en',
-      },
-      {
-        params: { id: project.id },
-        locale: 'uk',
-      }
-    ),
-  );
+  const paths = [];
+  locales.forEach((locale) => {
+    projects.forEach((project) => {
+      paths.push({
+        params: { id: project.id.toString() },
+        locale: locale,
+      });
+    });
+  });
 
   return { paths, fallback: true };
 }
-export async function getStaticProps(context) {
-  const { id } = context.params;
+
+export async function getStaticProps({ params }) {
+  const { id } = params;
 
   const response = await fetch(
     `${process.env.NEXT_BASE_URL}/api/projects/${id}`,
