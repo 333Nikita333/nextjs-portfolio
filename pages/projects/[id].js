@@ -41,7 +41,6 @@ const links = [
     icon: <TbApi className="border border-blue-500 rounded-full" size={25} />,
   },
 ];
-
 export async function getStaticPaths() {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
