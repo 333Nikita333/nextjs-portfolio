@@ -70,7 +70,7 @@ export const getStaticPaths = async ({ locales }) => {
       });
     });
   });
-
+console.log('paths', paths)
   return { paths, fallback: true };
 };
 
@@ -228,8 +228,8 @@ export default function Project({ project }) {
   return (
     <>
       <Meta
-        title={project.projectName || 'My Project'}
-        description={project.description || "One of Mykyta Hilis' projects"}
+        title={project?.projectName || 'My Project'}
+        description={project?.description || "One of Mykyta Hilis' projects"}
         robots="index, follow"
       />
 
@@ -256,7 +256,7 @@ export default function Project({ project }) {
               className="rounded-3xl sm:max-w-none"
             />
             {/* project title */}
-            <h2 className="text-4xl font-bold">{project.projectName}</h2>
+            <h2 className="text-4xl font-bold">{project?.projectName}</h2>
 
             {/* project type */}
             <p className="text-xl text-white">Type: {project.type}</p>
@@ -285,7 +285,7 @@ export default function Project({ project }) {
 
             {/* project tabs content */}
             <div className="border-2 border-white rounded-2xl p-5">
-              {tabs[index].content}
+              {tabs[index]?.content}
             </div>
           </div>
         </div>
