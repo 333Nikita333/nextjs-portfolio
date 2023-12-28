@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
+import { useEffect, useState } from 'react';
 
 const AnimatedText = ({
   isTypingAnimate,
@@ -10,6 +11,11 @@ const AnimatedText = ({
   sequence,
 }) => {
   const Tag = motion[tag];
+  const [isEnLocale, setIsEnLocale] = useState(false);
+
+  useEffect(() => {
+    setIsEnLocale(prevState => !prevState);
+  }, [sequence]);
 
   return (
     <Tag
@@ -21,6 +27,7 @@ const AnimatedText = ({
     >
       {isTypingAnimate ? (
         <TypeAnimation
+          key={isEnLocale}
           sequence={sequence}
           speed={50}
           className="type"

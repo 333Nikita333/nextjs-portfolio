@@ -15,6 +15,7 @@ import Socials from './Socials';
 import TooltipContainer from './TooltipContainer';
 import TopLeftImg from './TopLeftImg';
 import Transition from './Transition';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export {
   AnimatedText,
@@ -25,6 +26,7 @@ export {
   Layout,
   Meta,
   Nav,
+  LanguageSwitcher,
   ParticlesContainer,
   ProjectsBtn,
   ProjectsSlider,

@@ -31,7 +31,7 @@ export default async function handler(req, res) {
       New message from your portfolio website:
       Name: ${name}
       Email: ${email}
-      Theme: ${subject}
+      Subject: ${subject}
       Message: ${message}
     `;
 

@@ -7,8 +7,14 @@ import {
   ProjectsBtn,
 } from '../components';
 import { fadeIn } from '../variants';
+import { useRouter } from 'next/router';
+import homeEn from '../locales/en/home.json';
+import homeUk from '../locales/uk/home.json';
 
 const Home = () => {
+  const router = useRouter();
+  const t = router.locale === 'en' ? homeEn : homeUk;
+
   return (
     <>
       <Meta
@@ -33,17 +39,17 @@ const Home = () => {
               tag="h1"
               variants={fadeIn('down', 0.2)}
               sequence={[
-                'Every line of code -',
+                t.title1,
                 500,
-                'small step into the future',
+                t.title2,
                 2500,
-                'Innovation through',
+                t.title3,
                 500,
-                'technology and creativity',
+                t.title4,
                 2500,
-                'Ideas turn into code,',
+                t.title5,
                 500,
-                'and code into reality',
+                t.title6,
                 2500,
               ]}
               className="h1"
@@ -55,8 +61,8 @@ const Home = () => {
               variants={fadeIn('down', 0.3)}
               className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-10 text-lg leading-relaxed"
             >
-              Hello there! My name is{' '}
-              <span className="text-accent">Mykyta</span> and I am a{' '}
+              {t.description1}
+              <span className="text-accent"> Mykyta </span>and I am a
               <span className="text-accent">Junior Full Stack Developer</span>,
               and welcome to my virtual world of code and creativity. Here,
               every line is part of my story, and every project is an adventure.

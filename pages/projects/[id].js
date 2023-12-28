@@ -41,7 +41,7 @@ const links = [
     icon: <TbApi className="border border-blue-500 rounded-full" size={25} />,
   },
 ];
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
   if (!response.ok) {
@@ -52,17 +52,26 @@ export async function getStaticPaths() {
     );
     return {
       paths: [],
-      fallback: false,
+      fallback: true,
     };
   }
 
   const projects = await response.json();
 
-  const paths = projects.map(project => ({
-    params: { id: project.id },
-  }));
+  const paths = projects.map(
+    project => (
+      {
+        params: { id: project.id },
+        locale: 'en',
+      },
+      {
+        params: { id: project.id },
+        locale: 'uk',
+      }
+    ),
+  );
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 export async function getStaticProps(context) {
   const { id } = context.params;
@@ -103,7 +112,7 @@ export default function Project({ project }) {
   console.log('project =>', project);
 
   const [index, setIndex] = useState(0);
-  
+
   const tabs = [
     // description
     {
@@ -227,16 +236,15 @@ export default function Project({ project }) {
 
         {/* all project content */}
         <div className="flex max-lg:flex-col mb-auto lg:gap-10 mx-5 lg:mx-24 w-full">
-            <Link
-              className="z-31 fixed top-[130px] lg:top-[12vh] left-1/2 translate-x-[-50%] lg:left-[15%]  flex justify-center items-center gap-2 uppercase 
+          <Link
+            className="z-31 fixed top-[130px] lg:top-[12vh] left-1/2 translate-x-[-50%] lg:left-[15%]  flex justify-center items-center gap-2 uppercase 
               border-none rounded-lg hover:text-accent hover:scale-110 transition-all duration-300"
-              href={'/projects'}
-            >
-              <BsArrowLeftSquare size={25} /> Go back
-            </Link>
+            href={'/projects'}
+          >
+            <BsArrowLeftSquare size={25} /> Go back
+          </Link>
           {/* left content */}
           <div className="flex flex-col max-lg:mt-10 max-lg:items-center gap-3">
-
             {/* project image */}
             <Image
               src={project.imagePath}
