@@ -42,14 +42,14 @@ const links = [
   },
 ];
 
-export const getStaticPaths = async ({ locales }) => {
+export async function getStaticPaths({ locales }) {
   const response = await fetch(`${process.env.NEXT_BASE_URL}/api/projects`);
 
   if (!response.ok) {
     console.error(
       'Failed to fetch projects:',
       response.status,
-      response.statusText,
+      response.statusText
     );
     return {
       paths: [],
@@ -59,22 +59,21 @@ export const getStaticPaths = async ({ locales }) => {
 
   const projects = await response.json();
 
-  const supportedLocales = locales || ['en', 'uk'];
-
   const paths = [];
-  supportedLocales.forEach((locale) => {
-    projects.forEach((project) => {
-      paths.push({
-        params: { id: project.id.toString() },
-        locale: locale,
-      });
-    });
-  });
-console.log('paths', paths)
-  return { paths, fallback: true };
-};
+  for (const locale of locales) {
+    paths.push(
+      ...projects.map((project) => ({
+        params: { id: project.id },
+        locale,
+      }))
+    );
+  }
 
-export const getStaticProps = async ({ params, locale }) => {
+  return { paths, fallback: true };
+}
+
+
+export async function getStaticProps({ params, locale }) {
   const { id } = params;
 
   const response = await fetch(
@@ -107,8 +106,7 @@ export const getStaticProps = async ({ params, locale }) => {
       project,
     },
   };
-};
-
+}
 
 export default function Project({ project }) {
   console.log('project =>', project);
