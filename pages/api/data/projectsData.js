@@ -5,6 +5,7 @@ export const projectsData = [
     imagePath: '/lushwood-haven.jpg',
     projectName: 'Lushwood Haven',
     type: 'Solo Project',
+    responsibilities: null,
     links: [
       { github: 'https://github.com/SerhiiMukhin/js-team10-project' },
       { web: 'https://serhiimukhin.github.io/js-team10-project' },
@@ -201,6 +202,7 @@ export const projectsData = [
     imagePath: '/phonebook-api.jpg',
     projectName: 'Phonebook API',
     type: 'Solo Project',
+    responsibilities: null,
     links: [
       { github: 'https://github.com/333Nikita333/phonebook-api' },
       { documentation: 'https://contacts-api-n3q6.onrender.com/api/docs' },
@@ -258,6 +260,7 @@ export const projectsData = [
     imagePath: '/image-publish-app.jpg',
     projectName: 'Image Publish App',
     type: 'Solo Project',
+    responsibilities: null,
     links: [
       { github: 'https://github.com/333Nikita333/react-native-project' },
       {
@@ -334,6 +337,7 @@ export const projectsData = [
     imagePath: '/phonebook.jpg',
     projectName: 'Phonebook',
     type: 'Solo Project',
+    responsibilities: null,
     links: [
       { github: 'https://github.com/333Nikita333/phonebook' },
       { web: 'https://333nikita333.github.io/phonebook' },
@@ -390,6 +394,7 @@ export const projectsData = [
     imagePath: '/ip-adress-tracker.jpg',
     projectName: 'IP Adress Tracker',
     type: 'Solo Project',
+    responsibilities: null,
     links: [
       { github: 'https://github.com/333Nikita333/ip-address-tracker' },
       { web: 'https://ip-address-tracker-bice-beta.vercel.app' },
@@ -583,6 +588,7 @@ export const projectsData = [
     imagePath: '/web-studio.jpg',
     projectName: 'Web Studio',
     type: 'Solo Project',
+    responsibilities: null,
     links: [
       { github: 'https://github.com/333Nikita333/Web-Studio' },
       { web: 'https://333nikita333.github.io/Web-Studio' },
