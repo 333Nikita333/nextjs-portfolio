@@ -207,7 +207,7 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: project?.responsibilities ? ( // Добавленная строка начинается здесь
+      content: project.responsibilities ? (
         <div>
           {project.responsibilities.role && (
             <p className="text-white-700">{project.responsibilities.role}</p>
