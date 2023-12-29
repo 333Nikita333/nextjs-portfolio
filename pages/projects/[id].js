@@ -207,31 +207,32 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: project?.responsibilities ? (
-        <div>
-          {project.responsibilities?.role && (
-            <p className="text-white-700">{project.responsibilities.role}</p>
-          )}
-          {project.responsibilities?.list &&
-          project.responsibilities.list.length > 0 ? (
-            <ul className="list-disc">
-              {project.responsibilities.list.map((responsibility, index) => (
-                <li key={index} className="mb-2">
-                  {responsibility}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-white-700">
-              No responsibilities information available.
-            </p>
-          )}
-        </div>
-      ) : (
-        <p className="text-white-700">
-          No responsibilities information available.
-        </p>
-      ),
+      content:
+        project && project.responsibilities ? (
+          <div>
+            {project.responsibilities.role && (
+              <p className="text-white-700">{project.responsibilities.role}</p>
+            )}
+            {project.responsibilities.list &&
+            project.responsibilities.list.length > 0 ? (
+              <ul className="list-disc">
+                {project.responsibilities.list.map((responsibility, index) => (
+                  <li key={index} className="mb-2">
+                    {responsibility}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-white-700">
+                No responsibilities information available.
+              </p>
+            )}
+          </div>
+        ) : (
+          <p className="text-white-700">
+            No responsibilities information available.
+          </p>
+        ),
     },
   ].filter(tab => {
     return (
