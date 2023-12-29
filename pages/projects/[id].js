@@ -208,30 +208,24 @@ export default function Project({ project }) {
     {
       title: 'Responsibilities',
       content:
-        project && project.responsibilities ? (
+        project &&
+        project.responsibilities &&
+        project.responsibilities.role &&
+        project.responsibilities.list &&
+        Array.isArray(project.responsibilities.list) ? (
           <div>
-            {project.responsibilities.role && (
-              <p className="text-white-700">{project.responsibilities.role}</p>
-            )}
-            {project.responsibilities.list &&
-            Array.isArray(project.responsibilities.list) &&
-            project.responsibilities.list.length > 0 ? (
-              <ul className="list-disc">
-                {project.responsibilities.list.map((responsibility, index) => (
-                  <li key={index} className="mb-2">
-                    {responsibility}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-white-700">
-                Responsibilities list is empty or not an array.
-              </p>
-            )}
+            <p className="text-white-700">{project.responsibilities.role}</p>
+            <ul className="list-disc">
+              {project.responsibilities.list.map((responsibility, index) => (
+                <li key={index} className="mb-2">
+                  {responsibility}
+                </li>
+              ))}
+            </ul>
           </div>
         ) : (
           <p className="text-white-700">
-            Responsibilities object is not defined.
+            Responsibilities data is not available or incomplete.
           </p>
         ),
     },
