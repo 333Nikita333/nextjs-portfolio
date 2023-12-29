@@ -49,7 +49,7 @@ export async function getStaticPaths({ locales }) {
     console.error(
       'Failed to fetch projects:',
       response.status,
-      response.statusText
+      response.statusText,
     );
     return {
       paths: [],
@@ -59,19 +59,17 @@ export async function getStaticPaths({ locales }) {
 
   const projects = await response.json();
 
-  const paths = [];
-  for (const locale of locales) {
-    paths.push(
-      ...projects.map((project) => ({
-        params: { id: project.id },
-        locale,
-      }))
-    );
-  }
+  const paths = projects.reduce((acc, project) => {
+    const localizedPaths = locales.map((locale) => ({
+      params: { id: project.id },
+      locale,
+    }));
+
+    return acc.concat(localizedPaths);
+  }, []);
 
   return { paths, fallback: true };
 }
-
 
 export async function getStaticProps({ params, locale }) {
   const { id } = params;
@@ -109,15 +107,16 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function Project({ project }) {
+  
   console.log('project =>', project);
 
   const [index, setIndex] = useState(0);
-
+  
   const tabs = [
     // description
     {
       title: 'Description',
-      content: <p className="text-white-700">{project.description}</p>,
+      content: <p className="text-white-700">{project?.description}</p>,
     },
     // links
     {
