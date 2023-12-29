@@ -189,11 +189,17 @@ export default function Project({ project }) {
       title: 'Features',
       content: (
         <ul className="list-disc">
-          {project.features.map((feature, index) => (
-            <li key={index} className="mb-2">
-              <strong>{feature.featureName}:</strong> {feature.featureDesc}
-            </li>
-          ))}
+          {project &&
+            project.features &&
+            project.features.length > 0 &&
+            // Добавленные строки начинаются здесь
+            project.features.map((feature, index) => (
+              <li key={index} className="mb-2">
+                <strong>{feature.featureName}:</strong> {feature.featureDesc}
+              </li>
+            ))
+            // и заканчиваются здесь
+          }
         </ul>
       ),
     },
