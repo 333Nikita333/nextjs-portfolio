@@ -203,7 +203,7 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: project && (
+      content: project && project.responsibilities && (
         <div>
           {project.responsibilities && project.responsibilities.role && (
             <p className="text-white-700">{project.responsibilities.role}</p>
