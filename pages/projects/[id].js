@@ -223,13 +223,13 @@ export default function Project({ project }) {
             </ul>
           ) : (
             <p className="text-white-700">
-              Responsibilities information is not available.
+              No responsibilities information available.
             </p>
           )}
         </div>
       ) : (
         <p className="text-white-700">
-          Responsibilities information is not available.
+          No responsibilities information available.
         </p>
       ),
     },
