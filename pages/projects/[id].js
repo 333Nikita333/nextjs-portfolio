@@ -189,15 +189,16 @@ export default function Project({ project }) {
       title: 'Features',
       content: (
         <ul className="list-disc">
-          {project &&
-            project.features &&
-            project.features.length > 0 &&
-            // Добавленные строки начинаются здесь
-            project.features.map((feature, index) => (
-              <li key={index} className="mb-2">
-                <strong>{feature.featureName}:</strong> {feature.featureDesc}
-              </li>
-            ))
+          {
+            project &&
+              project.features &&
+              project.features.length > 0 &&
+              // Добавленные строки начинаются здесь
+              project.features.map((feature, index) => (
+                <li key={index} className="mb-2">
+                  <strong>{feature.featureName}:</strong> {feature.featureDesc}
+                </li>
+              ))
             // и заканчиваются здесь
           }
         </ul>
@@ -206,23 +207,26 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: project.responsibilities ? (
-        <div>
-          {project.responsibilities.role && (
-            <p className="text-white-700">{project.responsibilities.role}</p>
-          )}
-          {project.responsibilities.list &&
-            project.responsibilities.list.length > 0 && (
-              <ul className="list-disc">
-                {project.responsibilities.list.map((responsibility, index) => (
-                  <li key={index} className="mb-2">
-                    {responsibility}
-                  </li>
-                ))}
-              </ul>
+      content:
+        project && project.responsibilities ? (
+          <div>
+            {project.responsibilities.role && (
+              <p className="text-white-700">{project.responsibilities.role}</p>
             )}
-        </div>
-      ) : null,
+            {project.responsibilities.list &&
+              project.responsibilities.list.length > 0 && (
+                <ul className="list-disc">
+                  {project.responsibilities.list.map(
+                    (responsibility, index) => (
+                      <li key={index} className="mb-2">
+                        {responsibility}
+                      </li>
+                    ),
+                  )}
+                </ul>
+              )}
+          </div>
+        ) : null,
     },
   ].filter(tab => {
     return (
