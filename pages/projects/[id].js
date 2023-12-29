@@ -99,7 +99,7 @@ export async function getStaticProps({ params, locale }) {
     };
   }
 
-  console.log('Fetched project:', project); // Add this line to check the fetched project data
+  console.log('Fetched project:', project);
 
   return {
     props: {
@@ -203,12 +203,13 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: project?.responsibilities ? (
+      content: project && (
         <div>
-          {project.responsibilities.role && (
+          {project.responsibilities && project.responsibilities.role && (
             <p className="text-white-700">{project.responsibilities.role}</p>
           )}
-          {project.responsibilities.list &&
+          {project.responsibilities &&
+            project.responsibilities.list &&
             project.responsibilities.list.length > 0 && (
               <ul className="list-disc">
                 {project.responsibilities.list.map((responsibility, index) => (
@@ -219,10 +220,6 @@ export default function Project({ project }) {
               </ul>
             )}
         </div>
-      ) : (
-        <p className="text-white-700">
-          Responsibilities data is not available or incomplete.
-        </p>
       ),
     },
   ].filter(tab => {
