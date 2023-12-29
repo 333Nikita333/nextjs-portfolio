@@ -60,7 +60,7 @@ export async function getStaticPaths({ locales }) {
   const projects = await response.json();
 
   const paths = projects.reduce((acc, project) => {
-    const localizedPaths = locales.map((locale) => ({
+    const localizedPaths = locales.map(locale => ({
       params: { id: project.id },
       locale,
     }));
@@ -99,6 +99,8 @@ export async function getStaticProps({ params, locale }) {
     };
   }
 
+  console.log('Fetched project:', project); // Add this line to check the fetched project data
+
   return {
     props: {
       project,
@@ -107,11 +109,8 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function Project({ project }) {
-  
-  console.log('project =>', project);
-
   const [index, setIndex] = useState(0);
-  
+
   const tabs = [
     // description
     {
@@ -123,27 +122,31 @@ export default function Project({ project }) {
       title: 'Links',
       content: (
         <ul className="flex gap-5 flex-wrap">
-          {project.links.map((link, index) => (
-            <li key={index}>
-              {Object.keys(link).map((key, subIndex) => {
-                const linkIcon = links.find(l => l.name === key)?.icon;
-                const linkName = key.charAt(0).toUpperCase() + key.slice(1);
+          {project && project.links && (
+            <ul className="flex gap-5 flex-wrap">
+              {project.links.map((link, index) => (
+                <li key={index}>
+                  {Object.keys(link).map((key, subIndex) => {
+                    const linkIcon = links.find(l => l.name === key)?.icon;
+                    const linkName = key.charAt(0).toUpperCase() + key.slice(1);
 
-                return (
-                  <a
-                    key={subIndex}
-                    href={link[key]}
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className=" flex items-center gap-1 text-blue-500 hover:underline hover:scale-110 transition-all duration-300"
-                  >
-                    {linkIcon}
-                    {linkName}
-                  </a>
-                );
-              })}
-            </li>
-          ))}
+                    return (
+                      <a
+                        key={subIndex}
+                        href={link[key]}
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="flex items-center gap-1 text-blue-500 hover:underline hover:scale-110 transition-all duration-300"
+                      >
+                        {linkIcon}
+                        {linkName}
+                      </a>
+                    );
+                  })}
+                </li>
+              ))}
+            </ul>
+          )}
         </ul>
       ),
     },
