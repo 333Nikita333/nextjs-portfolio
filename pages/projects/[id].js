@@ -203,13 +203,13 @@ export default function Project({ project }) {
     // responsibilities
     {
       title: 'Responsibilities',
-      content: project && project.responsibilities && (
+      content: project.responsibilities ? (
         <div>
-          {project.responsibilities && project.responsibilities.role && (
+          {project.responsibilities.role && (
             <p className="text-white-700">{project.responsibilities.role}</p>
           )}
-          {project.responsibilities &&
-            project.responsibilities.list &&
+
+          {project.responsibilities.list &&
             project.responsibilities.list.length > 0 && (
               <ul className="list-disc">
                 {project.responsibilities.list.map((responsibility, index) => (
@@ -220,7 +220,7 @@ export default function Project({ project }) {
               </ul>
             )}
         </div>
-      ),
+      ) : null,
     },
   ].filter(tab => {
     return (
