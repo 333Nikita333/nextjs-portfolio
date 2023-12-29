@@ -189,45 +189,36 @@ export default function Project({ project }) {
       title: 'Features',
       content: (
         <ul className="list-disc">
-          {
-            project &&
-              project.features &&
-              project.features.length > 0 &&
-              // Добавленные строки начинаются здесь
-              project.features.map((feature, index) => (
-                <li key={index} className="mb-2">
-                  <strong>{feature.featureName}:</strong> {feature.featureDesc}
-                </li>
-              ))
-            // и заканчиваются здесь
-          }
+          {project &&
+            project.features &&
+            project.features.length > 0 &&
+            project.features.map((feature, index) => (
+              <li key={index} className="mb-2">
+                <strong>{feature.featureName}:</strong> {feature.featureDesc}
+              </li>
+            ))}
         </ul>
       ),
     },
     // responsibilities
     {
       title: 'Responsibilities',
-      content:
-        project &&
-        project.responsibilities &&
-        project.responsibilities.role &&
-        project.responsibilities.list &&
-        Array.isArray(project.responsibilities.list) ? (
-          <div>
-            <p className="text-white-700">{project.responsibilities.role}</p>
-            <ul className="list-disc">
-              {project.responsibilities.list.map((responsibility, index) => (
-                <li key={index} className="mb-2">
-                  {responsibility}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <p className="text-white-700">
-            Responsibilities data is not available or incomplete.
-          </p>
-        ),
+      content: project?.responsibilities?.role ? (
+        <div>
+          <p className="text-white-700">{project.responsibilities.role}</p>
+          <ul className="list-disc">
+            {project.responsibilities.list?.map((responsibility, index) => (
+              <li key={index} className="mb-2">
+                {responsibility}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p className="text-white-700">
+          Responsibilities data is not available or incomplete.
+        </p>
+      ),
     },
   ].filter(tab => {
     return (
