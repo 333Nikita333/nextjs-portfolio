@@ -7,6 +7,8 @@ const nextConfig = {
     locales: ['en', 'uk'],
     defaultLocale: 'en',
   },
+  localePath: path.resolve('./locales'),
+  reloadOnPrerender: process.env.NODE_ENV === 'development',
 }
 
 module.exports = nextConfig
