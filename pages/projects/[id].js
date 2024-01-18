@@ -53,22 +53,22 @@ export async function getStaticPaths({ locales }) {
     );
     return {
       paths: [],
-      fallback: true,
+      fallback: false,
     };
   }
 
   const projects = await response.json();
-
+  
   const paths = projects.reduce((acc, project) => {
     const localizedPaths = locales.map(locale => ({
-      params: { id: project.id },
+      params: { id: project.id || '404' },
       locale,
     }));
 
     return acc.concat(localizedPaths);
   }, []);
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params, locale }) {
@@ -110,6 +110,7 @@ export async function getStaticProps({ params, locale }) {
 
 export default function Project({ project }) {
   const [index, setIndex] = useState(0);
+
   const tabs = [
     // description
     {
