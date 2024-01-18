@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 import {
   AnimatedText,
   Bulb,
@@ -6,14 +7,20 @@ import {
   Meta,
   ServiceSlider,
 } from '../../components';
+import serviceEn from '../../locales/en/services.json';
+import serviceUk from '../../locales/uk/services.json';
 import { fadeIn } from '../../variants';
 
 const Services = () => {
+  const router = useRouter();
+
+  const t = router.locale === 'en' ? serviceEn : serviceUk;
+
   return (
     <>
       <Meta
-        title="Services"
-        description="Explore Mykyta's web development services. Your ideas, my code. Learn how I can help you bring your ideas to life."
+        title={t.metaTitle}
+        description={t.metaDescription}
         robots="index, nofollow"
       />
 
@@ -28,7 +35,7 @@ const Services = () => {
                 isTypingAnimate={true}
                 tag="h2"
                 variants={fadeIn('up', 0.2)}
-                sequence={['My services', 2500, 'Your ideas, my code', 2500]}
+                sequence={[t.title1, 2500, t.title2, 2500]}
                 className="h2 xl:mt-8"
               />
               <AnimatedText
@@ -37,11 +44,7 @@ const Services = () => {
                 variants={fadeIn('up', 0.4)}
                 className="mb-4 max-w-[400px] mx-auto lg:mx-0"
               >
-                Here you can find out more about how I can help you realize your
-                ideas into reality. Whether you need a website, web application
-                or development from scratch, I offer a wide range of web
-                development services to help you achieve your goals and maximize
-                your business&apos;s potential.
+                {t.description}
               </AnimatedText>
             </div>
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { FaServer, FaWrench } from 'react-icons/fa';
 import { RxArrowTopRight, RxDesktop, RxMobile } from 'react-icons/rx';
 import { Autoplay, FreeMode, Pagination } from 'swiper';
@@ -6,48 +7,48 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-export const serviceData = [
-  {
-    icon: <RxDesktop />,
-    title: 'Frontend Development',
-    description:
-      'Development of unique and intuitive interfaces, that improve the user experience.',
-  },
-  {
-    icon: <FaServer />,
-    title: 'Backend development',
-    description:
-      'Creating powerful server solutions that ensure reliability and the security of your web application.',
-  },
-  {
-    icon: <RxMobile />,
-    title: 'Mobile Adaptation',
-    description:
-      'Adapting your website or application for mobile devices so your content is available everywhere.',
-  },
-  {
-    icon: (
-      <Image
-        src="/service-optimization-icon.svg"
-        width={36}
-        height={36}
-        alt="icon optimization"
-      />
-    ),
-    title: 'Customization and Optimization',
-    description:
-      'Development of individual solutions and optimization existing projects to improve their productivity.',
-  },
-  {
-    icon: <FaWrench />,
-    title: 'Maintenance and Support',
-    description:
-      'Support and update of existing web projects, guaranteeing their uninterrupted operation.',
-  },
-];
+import servicesEn from '../locales/en/services.json';
+import servicesUk from '../locales/uk/services.json';
 
 const ServiceSlider = () => {
+  const router = useRouter();
+
+  const t = router.locale === 'en' ? servicesEn : servicesUk;
+  const serviceData = [
+    {
+      icon: <RxDesktop />,
+      title: t.serviceTitle1,
+      description: t.serviceDescription1,
+    },
+    {
+      icon: <FaServer />,
+      title: t.serviceTitle2,
+      description: t.serviceDescription2,
+    },
+    {
+      icon: <RxMobile />,
+      title: t.serviceTitle3,
+      description: t.serviceDescription3,
+    },
+    {
+      icon: (
+        <Image
+          src="/service-optimization-icon.svg"
+          width={36}
+          height={36}
+          alt="icon optimization"
+        />
+      ),
+      title: t.serviceTitle4,
+      description: t.serviceDescription4,
+    },
+    {
+      icon: <FaWrench />,
+      title: t.serviceTitle5,
+      description: t.serviceDescription5,
+    },
+  ];
+
   return (
     <Swiper
       breakpoints={{
