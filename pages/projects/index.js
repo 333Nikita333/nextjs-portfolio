@@ -7,13 +7,20 @@ import {
   ProjectsSlider,
 } from '../../components';
 import { fadeIn } from '../../variants';
+import projectsEn from '../../locales/en/projects.json';
+import projectsUk from '../../locales/uk/projects.json';
+import { useRouter } from 'next/router';
 
 const Projects = () => {
+  const router = useRouter();
+
+  const t = router.locale === 'en' ? projectsEn : projectsUk;
+
   return (
     <>
       <Meta
-        title="Projects"
-        description="Explore Mykyta's web development projects. From design to implementation, each project is a showcase of creativity and coding skills."
+        title={t.metaTitle}
+        description={t.metaDescription}
         robots="index, follow"
       />
 
@@ -27,14 +34,7 @@ const Projects = () => {
                 isTypingAnimate={true}
                 tag="h2"
                 variants={fadeIn('up', 0.2)}
-                sequence={[
-                  'My works',
-                  2500,
-                  'My history',
-                  2500,
-                  'My web collection',
-                  2500,
-                ]}
+                sequence={[t.title1, 2500, t.title2, 2500, t.title3, 2500]}
                 className="h2 xl:mt-12"
               />
               <AnimatedText
@@ -43,12 +43,7 @@ const Projects = () => {
                 variants={fadeIn('up', 0.4)}
                 className="mb-4 max-w-[400px] mx-auto xl:mx-0"
               >
-                I present to you some of my works that reflect my passion for
-                web development and design. From websites and web applications
-                to custom interfaces and mobile adaptations, each project
-                represents a challenge and opportunity for creativity. Every
-                line of code is a building block that I use, to build digital
-                worlds.
+                {t.description}
               </AnimatedText>
             </div>
 
