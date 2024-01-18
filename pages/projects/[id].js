@@ -53,7 +53,7 @@ export async function getStaticPaths({ locales }) {
     );
     return {
       paths: [],
-      fallback: false,
+      fallback: true,
     };
   }
 
@@ -68,7 +68,7 @@ export async function getStaticPaths({ locales }) {
     return acc.concat(localizedPaths);
   }, []);
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params, locale }) {

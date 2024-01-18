@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import CountUp from 'react-countup';
 import { FaCss3, FaDocker, FaHtml5, FaReact, FaSass } from 'react-icons/fa';
@@ -28,114 +29,117 @@ import {
   Meta,
   TooltipContainer,
 } from '../../components';
+import aboutEn from '../../locales/en/about.json';
+import aboutUk from '../../locales/uk/about.json';
 import { fadeIn } from '../../variants';
-
-export const aboutData = [
-  {
-    title: 'skills',
-    info: [
-      {
-        title: 'Front-end',
-        icons: [
-          <FaHtml5 title="HTML5" key="HTML5" />,
-          <FaCss3 title="CSS3" key="CSS3" />,
-          <FaSass title="SASS" key="SASS" />,
-          <SiJavascript title="JavaScript" key="JavaScript" />,
-          <SiTypescript title="TypeScript" key="TypeScript" />,
-          <FaReact title="React" key="React" />,
-          <TbBrandReactNative title="React Native" key="React Native" />,
-          <SiTailwindcss title="TailwindCSS" key="TailwindCSS" />,
-          <SiNextdotjs title="Next" key="Next" />,
-          <SiAxios title="Axios" key="Axios" />,
-          <SiReactquery title="React Query" key="React Query" />,
-        ],
-      },
-      {
-        title: 'Back-end',
-        icons: [
-          <Image
-            title="Node"
-            src={'/nodejs-icon.svg'}
-            height={24}
-            width={24}
-            key="Node"
-            alt="icon node.js"
-          />,
-          <SiExpress title="Express" key="Express" />,
-          <SiMongodb title="MongoDB" key="MongoDB" />,
-          <SiMongoose title="Mongoose" key="Mongoose" />,
-          <SiSwagger title="Swagger" key="Swagger" />,
-          <SiJsonwebtokens title="JWT" key="JWT" />,
-          <Image
-            title="Cloudinary"
-            src={'/cloudinary-icon.svg'}
-            height={24}
-            width={24}
-            alt="icon cloudinary"
-            key="Cloudinary"
-          />,
-          <FaDocker title="Docker" key="Docker" />,
-        ],
-      },
-      {
-        title: 'Common Tools',
-        icons: [
-          <TbBrandVscode title="VSCode" key="VSCode" />,
-          <SiGit title="Git" key="Git" />,
-          <SiWebpack title="Webpack" key="Webpack" />,
-          <SiVite title="Vite" key="Vite" />,
-          <SiPostman title="Postman" key="Postman" />,
-        ],
-      },
-    ],
-  },
-  {
-    title: 'credentials',
-    info: [
-      {
-        title:
-          "Master's degree, Industrial and Сivil engineerin - Kyiv National University of Construction and Architecture, Kyiv, Ukraine",
-        stage: '2012-2016',
-      },
-    ],
-  },
-  {
-    title: 'certificates',
-    info: [
-      {
-        title: 'Full Stack Developer - GoIT Global, Ukraine',
-        stage: '2022-2023',
-      },
-    ],
-  },
-];
-export const counters = [
-  {
-    end: 1,
-    text: 'Years of expirience',
-  },
-  {
-    end: 830,
-    text: 'Hours of coding',
-  },
-  {
-    end: 6,
-    text: 'Solo projects',
-  },
-  {
-    end: 3,
-    text: 'Team projects',
-  },
-];
 
 const About = () => {
   const [index, setIndex] = useState(0);
+  const router = useRouter();
 
+  const t = router.locale === 'en' ? aboutEn : aboutUk;
+  const aboutData = [
+    {
+      title: t.scillTitle,
+      info: [
+        {
+          title: t.scillName1,
+          icons: [
+            <FaHtml5 title="HTML5" key="HTML5" />,
+            <FaCss3 title="CSS3" key="CSS3" />,
+            <FaSass title="SASS" key="SASS" />,
+            <SiJavascript title="JavaScript" key="JavaScript" />,
+            <SiTypescript title="TypeScript" key="TypeScript" />,
+            <FaReact title="React" key="React" />,
+            <TbBrandReactNative title="React Native" key="React Native" />,
+            <SiTailwindcss title="TailwindCSS" key="TailwindCSS" />,
+            <SiNextdotjs title="Next" key="Next" />,
+            <SiAxios title="Axios" key="Axios" />,
+            <SiReactquery title="React Query" key="React Query" />,
+          ],
+        },
+        {
+          title: t.scillName2,
+          icons: [
+            <Image
+              title="Node"
+              src={'/nodejs-icon.svg'}
+              height={24}
+              width={24}
+              key="Node"
+              alt="icon node.js"
+            />,
+            <SiExpress title="Express" key="Express" />,
+            <SiMongodb title="MongoDB" key="MongoDB" />,
+            <SiMongoose title="Mongoose" key="Mongoose" />,
+            <SiSwagger title="Swagger" key="Swagger" />,
+            <SiJsonwebtokens title="JWT" key="JWT" />,
+            <Image
+              title="Cloudinary"
+              src={'/cloudinary-icon.svg'}
+              height={24}
+              width={24}
+              alt="icon cloudinary"
+              key="Cloudinary"
+            />,
+            <FaDocker title="Docker" key="Docker" />,
+          ],
+        },
+        {
+          title: t.scillName3,
+          icons: [
+            <TbBrandVscode title="VSCode" key="VSCode" />,
+            <SiGit title="Git" key="Git" />,
+            <SiWebpack title="Webpack" key="Webpack" />,
+            <SiVite title="Vite" key="Vite" />,
+            <SiPostman title="Postman" key="Postman" />,
+          ],
+        },
+      ],
+    },
+    {
+      title: t.credentialTitle,
+      info: [
+        {
+          title: t.credInfoTitle,
+          stage: '2012-2016',
+        },
+      ],
+    },
+    {
+      title: t.certificateTitle,
+      info: [
+        {
+          title: t.certificateInfoTitle,
+          stage: '2022-2023',
+        },
+      ],
+    },
+  ];
+  const counters = [
+    {
+      end: 1,
+      text: t.counterText1,
+    },
+    {
+      end: 830,
+      text: t.counterText2,
+    },
+    {
+      end: 6,
+      text: t.counterText3,
+    },
+    {
+      end: 3,
+      text: t.counterText4,
+    },
+  ];
+  
   return (
     <>
       <Meta
-        title="About"
-        description="Learn about Mykyta's journey in web development. Skills in front-end and back-end technologies. Education, experience, and certifications."
+        title={t.metaTitle}
+        description={t.metaDescription}
         robots="index, follow"
       />
 
@@ -163,14 +167,7 @@ const About = () => {
               isTypingAnimate={true}
               tag="h2"
               variants={fadeIn('right', 0.2)}
-              sequence={[
-                'Designing the future with every line',
-                2500,
-                'From Passion to Profession',
-                2500,
-                'The story of my web journey',
-                2500,
-              ]}
+              sequence={[t.title1, 2500, t.title2, 2500, t.title3, 2500]}
               className="h2"
             />
             <AnimatedText
@@ -179,12 +176,7 @@ const About = () => {
               variants={fadeIn('right', 0.4)}
               className="max-w-[500px] mx-auto xl:mx-0 mb-2 xl:mb-3 px-2 xl:px-0"
             >
-              My journey began with a dream of creating something amazing in the
-              digital world. And since then I have not stopped drawing this
-              dream, adding new colors and shapes to every project I create. My
-              work experience and my achievements are part of this story, but
-              the most important thing for me is the constant desire to learn
-              and grow.
+              {t.description}
             </AnimatedText>
             {/* counters */}
             <motion.div

@@ -18,8 +18,8 @@ const Home = () => {
   return (
     <>
       <Meta
-        title="Mykyta Hilis"
-        description="Explore Mykyta's web development and design projects. From websites to web applications, each project is a blend of technology and creativity"
+        title={t.metaTitle}
+        description={t.metaDescription}
         robots="index, follow"
       />
 
@@ -62,11 +62,10 @@ const Home = () => {
               className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-10 text-lg leading-relaxed"
             >
               {t.description1}
-              <span className="text-accent"> Mykyta </span>and I am a
-              <span className="text-accent">Junior Full Stack Developer</span>,
-              and welcome to my virtual world of code and creativity. Here,
-              every line is part of my story, and every project is an adventure.
-              Ready to explore? Let&apos;s start!
+              &nbsp;<span className="text-accent">{t.description2}</span>&nbsp;
+              {t.description3}
+              &nbsp;<span className="text-accent">{t.description4}</span>,&nbsp;
+              {t.description5}
             </AnimatedText>
             {/* btn */}
             <div className="flex justify-center xl:hidden relative">
