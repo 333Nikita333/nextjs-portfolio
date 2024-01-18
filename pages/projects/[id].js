@@ -110,7 +110,6 @@ export async function getStaticProps({ params, locale }) {
 
 export default function Project({ project }) {
   const [index, setIndex] = useState(0);
-
   const tabs = [
     // description
     {
