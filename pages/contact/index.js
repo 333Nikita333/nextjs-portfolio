@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import { AnimatedText, Circles, Meta } from '../../components';
+import contactEn from '../../locales/en/contact.json';
+import contactUk from '../../locales/uk/contact.json';
 import { fadeIn } from '../../variants';
-import { useState } from 'react';
 
 const initialData = {
   name: '',
@@ -12,6 +15,7 @@ const initialData = {
 };
 
 const Contact = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState(initialData);
 
   const handleChange = e => {
@@ -51,11 +55,13 @@ const Contact = () => {
     }
   };
 
+  const t = router.locale === 'en' ? contactEn : contactUk;
+
   return (
     <>
       <Meta
-        title="Contact"
-        description="Connect with Mykyta for web development projects. Fill out the form and let's discuss your ideas and requirements."
+        title={t.metaTitle}
+        description={t.metaDescription}
         robots="index, nofollow"
       />
 
@@ -74,7 +80,7 @@ const Contact = () => {
               variants={fadeIn('down', 0.2)}
               className="h2 text-center mb-12 "
             >
-              Let&apos;s <span className="text-accent">connect .</span>
+              {t.title1} <span className="text-accent">{t.title2}</span>
             </AnimatedText>
             {/* form */}
             <motion.form
@@ -89,7 +95,7 @@ const Contact = () => {
               <div className="flex gap-x-6 w-full">
                 <input
                   type="text"
-                  placeholder="What is your name?"
+                  placeholder={t.namePlaceholder}
                   className="input max-sm:text-sm"
                   name="name"
                   value={formData.name}
@@ -97,7 +103,7 @@ const Contact = () => {
                 />
                 <input
                   type="email"
-                  placeholder="What is your email?"
+                  placeholder={t.emailPlaceholder}
                   className="input max-sm:text-sm"
                   name="email"
                   value={formData.email}
@@ -106,14 +112,14 @@ const Contact = () => {
               </div>
               <input
                 type="text"
-                placeholder="Message subject"
+                placeholder={t.messageSubPlaceholder}
                 className="input max-sm:text-sm"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
               />
               <textarea
-                placeholder="Write your message"
+                placeholder={t.messageTextPlaceholder}
                 className="textarea max-sm:text-sm"
                 name="message"
                 value={formData.message}
@@ -129,7 +135,7 @@ const Contact = () => {
                   className="group-hover:-translate-y-[120%] group-hover:opacity-0 
                 transition-all duration-500"
                 >
-                  Let&apos;s talk
+                  {t.buttonText}
                 </span>
                 <BsArrowRight
                   className="-translate-y-120%] opacity-0 group-hover:flex 
