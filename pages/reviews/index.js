@@ -1,13 +1,20 @@
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 import { AnimatedText, Meta, ReviewSlider } from '../../components';
+import reviewsEn from '../../locales/en/reviews.json';
+import reviewsUk from '../../locales/uk/reviews.json';
 import { fadeIn } from '../../variants';
 
 const Reviews = () => {
+  const router = useRouter();
+
+  const t = router.locale === 'en' ? reviewsEn : reviewsUk;
+
   return (
     <>
       <Meta
-        title="Reviews"
-        description="Read what people are saying about Mykyta Hilis' web development services. Discover the experiences of clients and partners."
+        title={t.metaTitle}
+        description={t.metaDescription}
         robots="index, follow"
       />
 
@@ -20,7 +27,7 @@ const Reviews = () => {
             variants={fadeIn('down', 0.2)}
             className="h2 mb-8 xl:mb-0"
           >
-            What people <span className="text-accent">say .</span>
+            {t.title1} <span className="text-accent">{t.title2} .</span>
           </AnimatedText>
           {/* review slider */}
           <motion.div
