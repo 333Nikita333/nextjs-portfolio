@@ -1,4 +1,4 @@
-export const projectsData = [
+export const projectsDataEn = [
   // 9-Lushwood Haven
   {
     id: 'lushwood-haven',

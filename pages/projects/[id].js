@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { BsArrowLeftSquare } from 'react-icons/bs';
 import { FaFigma, FaGithub, FaLink, FaQrcode } from 'react-icons/fa';
 import { SiExpo, SiSwagger } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { Circles, Meta } from '../../components';
+import projectEn from '../../locales/en/project.json';
+import projectUk from '../../locales/uk/project.json';
 
 const links = [
   {
@@ -58,7 +61,7 @@ export async function getStaticPaths({ locales }) {
   }
 
   const projects = await response.json();
-  
+
   const paths = projects.reduce((acc, project) => {
     const localizedPaths = locales.map(locale => ({
       params: { id: project.id || '404' },
@@ -67,6 +70,8 @@ export async function getStaticPaths({ locales }) {
 
     return acc.concat(localizedPaths);
   }, []);
+
+  console.log('paths =>', paths);
 
   return { paths, fallback: false };
 }
@@ -109,17 +114,19 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export default function Project({ project }) {
+  const router = useRouter();
   const [index, setIndex] = useState(0);
 
+  const t = router.locale === 'en' ? projectEn : projectUk;
   const tabs = [
     // description
     {
-      title: 'Description',
+      title: t.description,
       content: <p className="text-white-700">{project?.description}</p>,
     },
     // links
     {
-      title: 'Links',
+      title: t.links,
       content: (
         <ul className="flex gap-5 flex-wrap">
           {project && project.links && (
@@ -152,7 +159,7 @@ export default function Project({ project }) {
     },
     // technologies
     {
-      title: 'Technologies',
+      title: t.technologies,
       content: (
         <ul className="flex flex-wrap gap-10">
           {project &&
@@ -186,7 +193,7 @@ export default function Project({ project }) {
     },
     // features
     {
-      title: 'Features',
+      title: t.features,
       content: (
         <ul className="list-disc">
           {project &&
@@ -202,33 +209,28 @@ export default function Project({ project }) {
     },
     // responsibilities
     {
-      title: 'Responsibilities',
-      content: (
+      title: t.responsibilities,
+      content: project.responsibilities ? (
         <div>
-          {project?.responsibilities?.role && (
+          {project.responsibilities.role && (
             <p className="text-white-700">{project.responsibilities.role}</p>
           )}
-          {project?.responsibilities?.list &&
-          Array.isArray(project.responsibilities.list) &&
-          project.responsibilities.list.length > 0 ? (
-            <ul className="list-disc">
-              {project.responsibilities.list.map((responsibility, index) => (
-                <li key={index} className="mb-2">
-                  {responsibility}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-white-700">
-              No specific responsibilities listed.
-            </p>
-          )}
+          {project.responsibilities.list &&
+            project.responsibilities.list.length > 0 && (
+              <ul className="list-disc">
+                {project.responsibilities.list.map((responsibility, index) => (
+                  <li key={index} className="mb-2">
+                    {responsibility}
+                  </li>
+                ))}
+              </ul>
+            )}
         </div>
-      ),
+      ) : null,
     },
   ].filter(tab => {
     return (
-      tab.title !== 'Responsibilities' ||
+      (tab.title !== 'Responsibilities' && tab.title !== 'Відповідальність') ||
       (project.responsibilities && project.responsibilities.list)
     );
   });
@@ -251,7 +253,7 @@ export default function Project({ project }) {
               border-none rounded-lg hover:text-accent hover:scale-110 transition-all duration-300"
             href={'/projects'}
           >
-            <BsArrowLeftSquare size={25} /> Go back
+            <BsArrowLeftSquare size={25} /> {t.buttonGoBack}
           </Link>
           {/* left content */}
           <div className="flex flex-col max-lg:mt-10 max-lg:items-center gap-3">
@@ -267,7 +269,9 @@ export default function Project({ project }) {
             <h2 className="text-4xl font-bold">{project?.projectName}</h2>
 
             {/* project type */}
-            <p className="text-xl text-white">Type: {project.type}</p>
+            <p className="text-xl text-white">
+              {t.type}: {project.type}
+            </p>
           </div>
 
           {/* right content */}

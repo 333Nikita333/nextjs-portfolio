@@ -1,10 +1,20 @@
-import { projectsData } from '../data/projectsData';
+import { projectsDataEn } from '../data/projectsDataEn';
+import { projectsDataUk } from '../data/projectsDataUk';
 
 export default function handler(req, res) {
-  const { id } = req.query;
+  const { id, locale } = req.query;
 
   if (req.method === 'GET') {
-    const project = projectsData.find(project => project.id === id);
+    console.log('locale =>', locale);
+    let project;
+
+    if (locale === 'en') {
+      project = projectsDataEn.find(project => project.id === id);
+    }
+
+    if (locale === 'uk') {
+      project = projectsDataUk.find(project => project.id === id);
+    }
 
     if (project) {
       res.status(200).json(project);
