@@ -19,7 +19,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="relative border border-gray-300 rounded xl:mr-20">
+    <div className="relative border border-gray-300 rounded">
       <div className="cursor-pointer" onClick={handleFlagClick}>
         <Image
           src={t.flagIcon}
@@ -30,7 +30,7 @@ const LanguageSwitcher = () => {
       </div>
 
       {isDropdownVisible && (
-        <div className="absolute top-full right-0 mt-2 max-sm:left-12 max-sm:top-0 max-sm:mt-0">
+        <div className="absolute top-full right-0 mt-2 max-sm:left-12 max-sm:top-0 max-sm:mt-0 w-[40px]">
           <div
             className="cursor-pointer"
             onClick={() =>
