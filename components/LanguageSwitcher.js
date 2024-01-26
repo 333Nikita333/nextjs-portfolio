@@ -19,29 +19,30 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative border border-gray-300 rounded xl:mr-20">
       <div className="cursor-pointer" onClick={handleFlagClick}>
         <Image
           src={t.flagIcon}
-          width={30}
+          width={40}
           height={30}
           alt={`${router.locale}-flag`}
         />
       </div>
 
       {isDropdownVisible && (
-        <div className="absolute top-full right-0 mt-2 bg-white p-2 border border-gray-300 rounded">
+        <div className="absolute top-full right-0 mt-2 max-sm:left-12 max-sm:top-0 max-sm:mt-0">
           <div
             className="cursor-pointer"
-            onClick={() => handleLanguageChange('en')}
+            onClick={() =>
+              handleLanguageChange(router.locale === 'en' ? 'uk' : 'en')
+            }
           >
-            <Image src="/flag-en.svg" width={30} height={30} alt="en-flag" />
-          </div>
-          <div
-            className="cursor-pointer"
-            onClick={() => handleLanguageChange('uk')}
-          >
-            <Image src="/flag-ua.svg" width={30} height={30} alt="ua-flag" />
+            <Image
+              src={router.locale === 'en' ? '/flag-ua.svg' : '/flag-en.svg'}
+              width={40}
+              height={30}
+              alt="en-flag"
+            />
           </div>
         </div>
       )}

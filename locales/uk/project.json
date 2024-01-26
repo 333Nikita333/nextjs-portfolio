@@ -1,9 +1,9 @@
 {
-    "description": "Опис",
-    "links": "Посилання",
-    "technologies": "Технології",
-    "features": "Особливості",
-    "responsibilities": "Відповідальність",
-    "type": "Тип",
-    "buttonGoBack": "Назад"
+  "description": "Опис",
+  "links": "Посилання",
+  "technologies": "Технології",
+  "features": "Особливості",
+  "responsibilities": "Відповідальність",
+  "type": "Тип",
+  "buttonGoBack": "Назад"
 }

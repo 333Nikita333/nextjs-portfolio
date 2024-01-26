@@ -134,7 +134,7 @@ const About = () => {
       text: t.counterText4,
     },
   ];
-  
+
   return (
     <>
       <Meta
@@ -162,7 +162,7 @@ const About = () => {
           gap-x-6 max-sm:overflow-y-auto"
         >
           {/* text */}
-          <div className="flex-1 flex flex-col xl:ml-12 max-xl:mb-3 mt-28 md:mt-24 lg:mt-20 xl:mt-0">
+          <div className="flex-1 flex flex-col xl:ml-12 max-xl:mb-3 mt-44 md:mt-24 lg:mt-20 xl:mt-0">
             <AnimatedText
               isTypingAnimate={true}
               tag="h2"

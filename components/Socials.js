@@ -32,7 +32,7 @@ const socials = [
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg">
+    <div className="flex items-center gap-x-5 text-lg lg:mr-20">
       {socials.map(({ path, icon}, index) => (
         <Link
           key={index}

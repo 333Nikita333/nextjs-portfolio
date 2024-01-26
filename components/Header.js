@@ -9,11 +9,11 @@ import Socials from './Socials';
 const Header = () => {
   const router = useRouter();
   const t = router.locale === 'en' ? filesPathEn : filesPathUk;
-  
+
   return (
     <header className="fixed top-0 z-30 w-full flex items-center px-16 xl:px-0 xl:h-[90px]">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8">
+      <div className="container mx-auto flex items-center justify-around max-sm:flex-col max-sm:gap-y-6">
+        <div className="flex flex-col lg:flex-row lg:w-full justify-between items-center gap-y-6 py-8 max-sm:pb-0">
           {/* logo */}
           <Link href={'/'}>
             <Image
@@ -26,8 +26,9 @@ const Header = () => {
           </Link>
           {/* socials */}
           <Socials />
-          <LanguageSwitcher />
         </div>
+        {/* language switcher */}
+        <LanguageSwitcher />
       </div>
     </header>
   );

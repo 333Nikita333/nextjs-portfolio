@@ -24,7 +24,7 @@ const Projects = () => {
         robots="index, follow"
       />
 
-      <div className="h-full bg-primary/30 py-28 flex items-center max-xl:overflow-y-auto">
+      <div className="h-full bg-primary/30 py-28 max-sm:pt-44 max-sm:pb-28 flex items-center max-xl:overflow-y-auto">
         <Circles />
         <div className="container mx-auto max-xl:mt-auto xl:mt-12">
           <div className="flex flex-col xl:flex-row gap-x-12">

@@ -9,28 +9,30 @@ import {
   HiViewColumns,
 } from 'react-icons/hi2';
 import TooltipContainer from './TooltipContainer';
-
-// nav data
-export const navData = [
-  { name: 'home', path: '/', icon: <HiHome /> },
-  { name: 'about', path: '/about', icon: <HiUser /> },
-  { name: 'services', path: '/services', icon: <HiRectangleGroup /> },
-  { name: 'projects', path: '/projects', icon: <HiViewColumns /> },
-  {
-    name: 'reviews',
-    path: '/reviews',
-    icon: <HiChatBubbleBottomCenterText />,
-  },
-  {
-    name: 'contact',
-    path: '/contact',
-    icon: <HiEnvelope />,
-  },
-];
+import navigationEn from '../locales/en/navigation.json';
+import navigationUk from '../locales/uk/navigation.json';
 
 const Nav = () => {
   const router = useRouter();
   const pathname = router.pathname;
+  const t = router.locale === 'en' ? navigationEn : navigationUk;
+
+  const navData = [
+    { name: t.home, path: '/', icon: <HiHome /> },
+    { name: t.about, path: '/about', icon: <HiUser /> },
+    { name: t.services, path: '/services', icon: <HiRectangleGroup /> },
+    { name: t.projects, path: '/projects', icon: <HiViewColumns /> },
+    {
+      name: t.reviews,
+      path: '/reviews',
+      icon: <HiChatBubbleBottomCenterText />,
+    },
+    {
+      name: t.contact,
+      path: '/contact',
+      icon: <HiEnvelope />,
+    },
+  ];
 
   return (
     <nav

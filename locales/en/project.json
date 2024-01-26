@@ -1,9 +1,9 @@
 {
-    "description": "Description",
-    "links": "Links",
-    "technologies": "Technologies",
-    "features": "Features",
-    "responsibilities": "Responsibilities",
-    "type": "Type",
-    "buttonGoBack": "Go Back"
+  "description": "Description",
+  "links": "Links",
+  "technologies": "Technologies",
+  "features": "Features",
+  "responsibilities": "Responsibilities",
+  "type": "Type",
+  "buttonGoBack": "Go Back"
 }
