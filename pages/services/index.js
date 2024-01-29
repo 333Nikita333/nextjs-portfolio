@@ -24,7 +24,7 @@ const Services = () => {
         robots="index, nofollow"
       />
 
-      <div className="h-full bg-primary/30 py-36 max-sm:pt-52 flex items-center max-sm:overflow-y-auto lg:overflow-y-hidden">
+      <div className="h-full bg-primary/30 py-36 max-sm:pt-48 flex items-center sm:overflow-y-auto lg:overflow-y-hidden">
         <Circles />
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row gap-x-8">
@@ -36,7 +36,9 @@ const Services = () => {
                 tag="h2"
                 variants={fadeIn('up', 0.2)}
                 sequence={[t.title1, 2500, t.title2, 2500]}
-                className="h2 xl:mt-8"
+                className={`h2 ${
+                  router.locale === 'uk' && 'max-sm:mt-32'
+                } xl:mt-8`}
               />
               <AnimatedText
                 isTypingAnimate={false}
