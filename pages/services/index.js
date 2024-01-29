@@ -24,7 +24,7 @@ const Services = () => {
         robots="index, nofollow"
       />
 
-      <div className="h-full bg-primary/30 py-36 max-sm:pt-48 flex items-center max-sm:overflow-y-auto lg:overflow-y-hidden">
+      <div className="h-full bg-primary/30 py-36 max-sm:pt-52 flex items-center max-sm:overflow-y-auto lg:overflow-y-hidden">
         <Circles />
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row gap-x-8">
