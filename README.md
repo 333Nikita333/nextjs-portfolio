@@ -17,20 +17,20 @@ This project is my personal portfolio where you can learn more about me, my skil
 6. **Contact:** Visitors can contact me using the feedback form.
 
 ## Technologies
-- **NextJS** - Фреймворк React для создания веб-приложений.
-- **TailwindCSS** - CSS-фреймворк для создания современных пользовательских интерфейсов.
-- **Tailwind-scrollbar** - Расширение Tailwind CSS для настройки стилей полос прокрутки.
-- **Framer-motion** - Библиотека для создания анимаций.
-- **React** - Библиотека для создания пользовательских интерфейсов.
-- **React-countup** - Библиотека для создания анимированных счетчиков в React.
-- **React-dom** - Модуль для взаимодействия с DOM в React.
-- **React-icons** - Библиотека иконок для использования в React-приложениях.
-- **Tsparticles:** v2.9.3 - Библиотека для создания анимированных частиц в веб-приложениях.
-- **React-tsparticles** - Интеграция библиотеки particles.js в React.
-- **React-type-animation** - Библиотека для создания анимированных текстовых эффектов в React.
-- **Swiper** - Современная библиотека для создания слайдеров в веб-приложениях.
-- **Autoprefixer** - Плагин PostCSS для автоматической установки вендорных префиксов в CSS.
-- **Postcss** - Инструмент для преобразования CSS с использованием плагинов.
-- **i18n** - Библиотека для локализации приложений.
-- **Node-fetch** - Модуль для выполнения HTTP-запросов на стороне сервера в Node.js.
-- **Node-telegram-bot-api** - API для создания ботов в Telegram на платформе Node.js.
+- **NextJS** - React framework for creating web applications.
+- **TailwindCSS** - CSS framework for creating modern user interfaces.
+- **Tailwind-scrollbar** - Tailwind CSS extension for customizing scrollbar styles.
+- **Framer-motion** - Library for creating animations.
+- **React** - Library for creating user interfaces.
+- **React-countup** - A library for creating animated counters in React.
+- **React-dom** - A module for interacting with the DOM in React.
+- **React-icons** - A library of icons for use in React applications.
+- **Tsparticles:** v2.9.3 - Library for creating animated particles in web applications.
+- **React-tsparticles** - Integration of the particles.js library into React.
+- **React-type-animation** - A library for creating animated text effects in React.
+- **Swiper** - A modern library for creating sliders in web applications.
+- **Autoprefixer** - PostCSS plugin for automatically installing vendor prefixes in CSS.
+- **Postcss** - A tool for transforming CSS using plugins.
+- **i18n** - Library for application localization.
+- **Node-fetch** - A module for performing HTTP requests on the server side in Node.js.
+- **Node-telegram-bot-api** - API for creating bots in Telegram on the Node.js platform.
