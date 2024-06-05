@@ -31,6 +31,5 @@ This project is my personal portfolio where you can learn more about me, my skil
 - **Swiper** - A modern library for creating sliders in web applications.
 - **Autoprefixer** - PostCSS plugin for automatically installing vendor prefixes in CSS.
 - **Postcss** - A tool for transforming CSS using plugins.
-- **i18n** - Library for application localization.
 - **Node-fetch** - A module for performing HTTP requests on the server side in Node.js.
 - **Node-telegram-bot-api** - API for creating bots in Telegram on the Node.js platform.
