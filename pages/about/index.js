@@ -20,6 +20,8 @@ import {
   SiTypescript,
   SiVite,
   SiWebpack,
+  SiJquery,
+  SiBootstrap
 } from 'react-icons/si';
 import { TbBrandReactNative, TbBrandVscode } from 'react-icons/tb';
 import {
@@ -53,9 +55,11 @@ const About = () => {
             <FaReact title="React" key="React" />,
             <TbBrandReactNative title="React Native" key="React Native" />,
             <SiTailwindcss title="TailwindCSS" key="TailwindCSS" />,
+            <SiBootstrap title="Bootstrap" key="Bootstrap" />,
             <SiNextdotjs title="Next" key="Next" />,
             <SiAxios title="Axios" key="Axios" />,
             <SiReactquery title="React Query" key="React Query" />,
+            <SiJquery title="JQuery" key="JQuery" />,
           ],
         },
         {
@@ -122,7 +126,7 @@ const About = () => {
       text: t.counterText1,
     },
     {
-      end: 830,
+      end: 1000,
       text: t.counterText2,
     },
     {
@@ -190,12 +194,12 @@ const About = () => {
                 {counters.map(({ end, text }, index) => (
                   <div
                     key={index}
-                    className={`relative mb-1 flex-1 ${
+                    className={`relative mb-1 ${
                       index !== counters.length - 1 &&
-                      'after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'
+                      'after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:-right-1'
                     }`}
                   >
-                    <div className="text-2xl xl:text-4xl font-extrabold text-accent">
+                    <div className="text-xl xl:text-4xl font-extrabold text-accent">
                       <CountUp start={0} end={end} duration={5} /> +
                     </div>
                     <div className="text-xs uppercase tracking-[1px] leading-[1.4] xl:max-w-[100px]">
