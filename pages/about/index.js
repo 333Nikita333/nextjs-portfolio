@@ -155,11 +155,9 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="hidden max-w-[415px] max-h-[415px] xl:flex absolute bottom-0 -left-[171px]"
+          className="hidden max-w-[415px] max-h-[415px] xl:flex absolute bottom-0 -left-[171px] rotateY-180"
         >
-          <div style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}>
-            <Avatar />
-          </div>
+          <Avatar />
         </motion.div>
         <div
           className="container mx-auto h-full flex flex-col items-center xl:flex-row 
