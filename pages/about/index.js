@@ -157,7 +157,7 @@ const About = () => {
           exit="hidden"
           className="hidden max-w-[415px] max-h-[415px] xl:flex absolute bottom-0 -left-[171px]"
         >
-          <div style={{ transform: 'scaleX(-1)' }}>
+          <div style={{ transform: 'rotateY(180deg)' }}>
             <Avatar />
           </div>
         </motion.div>
