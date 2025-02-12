@@ -8,6 +8,8 @@ const Avatar = () => {
         width={1000}
         height={1000}
         alt="photo of the developer"
+        loading="eager"
+        priority={true}
         className="translate-z-0 w-full h-full"
       />
     </div>
