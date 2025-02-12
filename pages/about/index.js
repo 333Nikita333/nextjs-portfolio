@@ -155,7 +155,7 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="hidden max-w-[415px] max-h-[415px] xl:flex absolute bottom-0 -left-[171px] rotateY-180"
+          className="hidden max-w-[415px] max-h-[415px] xl:flex absolute bottom-0 -left-[171px] scale-x-[-1]"
         >
           <Avatar />
         </motion.div>
